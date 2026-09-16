@@ -1,0 +1,51 @@
+[
+  {
+    "id":          "bungalow",
+    "icon":        "&#127968;",
+    "title":       "Bungalow Design",
+    "description": "Complete design solutions for independent bungalows — spatial planning, materials selection, finishes, and integrated landscaping.",
+    "image":       "images/expertise-bungalow.svg"
+  },
+  {
+    "id":          "terrace",
+    "icon":        "&#127796;",
+    "title":       "Terrace Design",
+    "description": "Transform rooftop terraces into living gardens — pergolas, seating zones, planters, lighting, and weather-proof finishes.",
+    "image":       "images/expertise-terrace.svg"
+  },
+  {
+    "id":          "elevation",
+    "icon":        "&#127959;",
+    "title":       "Building Elevation",
+    "description": "Exterior facades that make a statement — cladding, texture paint, stone work, window framing, and compound walls.",
+    "image":       "images/expertise-elevation.svg"
+  },
+  {
+    "id":          "pergola",
+    "icon":        "&#9729;",
+    "title":       "Pergola Design",
+    "description": "Elegant pergola structures for gardens, terraces, and poolside — timber, metal, and PVC profiles with climbing plants.",
+    "image":       "images/expertise-pergola.svg"
+  },
+  {
+    "id":          "living",
+    "icon":        "&#128250;",
+    "title":       "Living Room",
+    "description": "Curated living spaces — furniture layouts, feature walls, false ceilings, lighting design, and bespoke joinery.",
+    "image":       "images/expertise-living.svg"
+  },
+  {
+    "id":          "kitchen",
+    "icon":        "&#127859;",
+    "title":       "Modular Kitchen",
+    "description": "Efficient Indian kitchens — modular cabinets, smart storage, premium finishes, and seamless appliance integration.",
+    "image":       "images/expertise-kitchen.svg"
+  },
+  {
+    "id":          "bedroom",
+    "icon":        "&#128716;",
+    "title":       "Bedroom",
+    "description": "Serene, functional bedrooms — wardrobes, upholstered headboards, lighting layers, and cohesive colour palettes.",
+    "image":       "images/expertise-bedroom.svg"
+  }
+]

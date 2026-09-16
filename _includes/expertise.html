@@ -1,0 +1,33 @@
+<section class="expertise section" id="expertise">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-eyebrow">What We Do</p>
+      <h2 class="section-title">Our Expertise</h2>
+      <p class="section-desc">
+        From grand bungalow facades to intimate bedroom retreats — we design every
+        space with precision, warmth, and an unmistakably Indian sensibility.
+      </p>
+    </div>
+
+    <div class="expertise__grid">
+      {% for service in site.data.services %}
+      <article class="expertise-card">
+        <div class="expertise-card__img-wrap">
+          <img
+            src="{{ service.image | relative_url }}"
+            alt="{{ service.title }}"
+            loading="lazy"
+          />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

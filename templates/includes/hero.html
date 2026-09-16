@@ -1,0 +1,21 @@
+{% load static %}
+<section class="hero" id="hero">
+  <img src="{% static config.hero.image %}"
+       alt="{{ config.title }}" class="hero__bg" />
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">{{ config.hero.eyebrow }}</p>
+    <h1 class="hero__title">
+      {{ config.hero.title_line1 }}<br>{{ config.hero.title_line2 }}
+    </h1>
+    <p class="hero__sub">{{ config.hero.subtitle }}</p>
+    <div class="hero__actions">
+      <a href="#portfolio" class="btn btn--primary">{{ config.hero.cta_primary }}</a>
+      <a href="#contact"   class="btn btn--ghost">{{ config.hero.cta_secondary }}</a>
+    </div>
+  </div>
+  <div class="hero__scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>

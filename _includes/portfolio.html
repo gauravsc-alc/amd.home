@@ -1,0 +1,47 @@
+<section class="portfolio section section--warm" id="portfolio">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-eyebrow">Featured Work</p>
+      <h2 class="section-title">Portfolio</h2>
+      <p class="section-desc">
+        A selection of completed and upcoming projects.
+        Click any image to view full size.
+      </p>
+    </div>
+
+    <!-- Filter tabs — categories driven by _data/portfolio.json -->
+    <div class="portfolio__filters" role="tablist">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bungalow">Bungalow</button>
+      <button class="filter-btn" data-filter="terrace">Terrace</button>
+      <button class="filter-btn" data-filter="elevation">Elevation</button>
+      <button class="filter-btn" data-filter="pergola">Pergola</button>
+      <button class="filter-btn" data-filter="living">Living Room</button>
+      <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+      <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+    </div>
+
+    <!-- Portfolio grid — looped from _data/portfolio.json -->
+    <div class="portfolio__grid" id="portfolioGrid">
+      {% for item in site.data.portfolio %}
+      <div class="portfolio-item{% if item.wide %} portfolio-item--wide{% endif %}"
+           data-category="{{ item.category }}">
+        <div class="portfolio-item__img-wrap">
+          <img
+            src="{{ item.image | relative_url }}"
+            alt="{{ item.title }} — {{ item.category_label }}"
+            loading="lazy"
+          />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">{{ item.category_label }}</p>
+            <h3 class="portfolio-item__title">{{ item.title }}</h3>
+            <p class="portfolio-item__loc">{{ item.location }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

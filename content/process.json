@@ -1,0 +1,22 @@
+[
+  {
+    "number":      "01",
+    "title":       "Discovery &amp; Brief",
+    "description": "We begin with a detailed site visit and client consultation to understand your lifestyle, requirements, budget, and vision for the space."
+  },
+  {
+    "number":      "02",
+    "title":       "Concept &amp; Design",
+    "description": "We present 2D floor plans, 3D visualisations, material boards, and colour palettes — refined through your feedback until the design is exactly right."
+  },
+  {
+    "number":      "03",
+    "title":       "Execution &amp; Supervision",
+    "description": "Our team manages vendors, site supervision, and quality checks through every stage — from civil work to final styling."
+  },
+  {
+    "number":      "04",
+    "title":       "Handover &amp; After-care",
+    "description": "A formal snag walk, punch-list sign-off, and 6 months of after-care support to ensure every detail is perfect."
+  }
+]

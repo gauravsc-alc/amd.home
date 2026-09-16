@@ -1,0 +1,40 @@
+{
+  "title":       "AMD Home Interiors",
+  "full_name":   "Ashapura Mata Designs",
+  "tagline":     "Spaces That Tell Your Story",
+  "description": "Expert interior design for bungalows, terraces, building elevations, pergolas, living rooms, kitchens, and bedrooms across India.",
+
+  "hero": {
+    "eyebrow":       "Interior Design & Architecture",
+    "title_line1":   "Spaces That Tell",
+    "title_line2":   "Your Story",
+    "subtitle":      "Bungalows · Terraces · Elevations · Pergolas · Interiors",
+    "cta_primary":   "View Portfolio",
+    "cta_secondary": "Get a Quote",
+    "image":         "images/hero.svg"
+  },
+
+  "contact": {
+    "phone":     "+91 99999 99999",
+    "email":     "hello@amdhomeinteriors.com",
+    "location":  "Pune, Maharashtra",
+    "form_note": "We reply within 24 hours."
+  },
+
+  "social": {
+    "instagram": "#",
+    "whatsapp":  "#"
+  },
+
+  "stats": [
+    { "number": "50+",  "label": "Projects Completed" },
+    { "number": "12+",  "label": "Years Experience"   },
+    { "number": "100%", "label": "Client Satisfaction" },
+    { "number": "7",    "label": "Design Specialities" }
+  ],
+
+  "footer": {
+    "tagline": "Designing spaces that reflect who you are.",
+    "copy":    "2025 AMD Home Interiors. All rights reserved."
+  }
+}

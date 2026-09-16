@@ -1,0 +1,28 @@
+<section class="process section" id="process">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-eyebrow">How We Work</p>
+      <h2 class="section-title">Our Design Process</h2>
+    </div>
+
+    <div class="process__steps">
+      {% for step in site.data.process %}
+
+      <div class="process-step">
+        <div class="process-step__num">{{ step.number }}</div>
+        <div class="process-step__body">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </div>
+
+      {% unless forloop.last %}
+      <div class="process-step__divider" aria-hidden="true"></div>
+      {% endunless %}
+
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

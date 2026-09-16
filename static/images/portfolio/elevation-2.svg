@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Elevation · Project 2">
+  <defs>
+    <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF18" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="#3A5C8A"/>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <rect x="440" y="273" width="320" height="128" rx="6"
+        fill="none" stroke="#FFFFFF33" stroke-width="1.5" stroke-dasharray="10 5"/>
+  <text x="600" y="325" text-anchor="middle"
+        font-family="Georgia,serif" font-size="20" fill="#FFFFFF" font-weight="bold">Elevation · Project 2</text>
+  <text x="600" y="355" text-anchor="middle"
+        font-family="sans-serif" font-size="12" fill="#FFFFFFB0">Wide card — 1200x675 px</text>
+  <text x="1192" y="667" text-anchor="end"
+        font-family="monospace" font-size="10" fill="#FFFFFF44">placeholder · 1200x675</text>
+</svg>

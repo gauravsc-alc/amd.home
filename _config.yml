@@ -1,4 +1,68 @@
-title: AMD Home Interiors
-description: Indian home interior ideas with elegant, practical design inspiration.
-theme: minima
-markdown: kramdown
+# ─────────────────────────────────────────────────────────────
+#  AMD Home Interiors — Site Configuration
+#  Edit this file to update every heading, contact detail,
+#  stat, and colour accent across the whole website.
+# ─────────────────────────────────────────────────────────────
+
+# ── Site Identity ───────────────────────────────────────────
+title:       AMD Home Interiors
+tagline:     Spaces That Tell Your Story
+description: >
+  Expert interior design for bungalows, terraces, building elevations,
+  pergolas, living rooms, kitchens, and bedrooms — across India.
+
+# ── GitHub Pages ────────────────────────────────────────────
+baseurl: "/amd.home"
+url:     "https://gauravsc-alc.github.io"
+
+# ── Hero Section ────────────────────────────────────────────
+hero:
+  eyebrow:       "Interior Design & Architecture"
+  title:         "Spaces That Tell\nYour Story"
+  subtitle:      "Bungalows · Terraces · Elevations · Pergolas · Interiors"
+  cta_primary:   "View Portfolio"
+  cta_secondary: "Get a Quote"
+  image:         "assets/images/hero.svg"   # 📷 Replace with your hero photo
+
+# ── Contact Details ─────────────────────────────────────────
+contact:
+  phone:    "+91 99999 99999"
+  email:    "hello@amdhomeinteriors.com"
+  location: "Pune, Maharashtra"
+  form_note: "We reply within 24 hours."
+
+# ── Social Links ────────────────────────────────────────────
+social:
+  instagram: "#"     # ✏️  Replace # with your Instagram URL
+  whatsapp:  "#"     # ✏️  Replace # with your WhatsApp link
+
+# ── Stats Band ──────────────────────────────────────────────
+stats:
+  - number: "50+"
+    label:  "Projects Completed"
+  - number: "12+"
+    label:  "Years Experience"
+  - number: "100%"
+    label:  "Client Satisfaction"
+  - number: "7"
+    label:  "Design Specialities"
+
+# ── Footer ──────────────────────────────────────────────────
+footer:
+  tagline: "Designing spaces that reflect who you are."
+  copy:    "&copy; 2025 AMD Home Interiors. All rights reserved."
+
+# ── Jekyll Build ────────────────────────────────────────────
+markdown:  kramdown
+permalink: pretty
+
+kramdown:
+  input:         GFM
+  syntax_highlighter: ~
+
+exclude:
+  - generate_placeholders.py
+  - README.md
+  - "*.sh"
+  - .venv/
+  - .vscode/

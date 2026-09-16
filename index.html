@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✏️  EDIT: Update the title and description -->
+  <title>AMD Home Interiors — Interior Design Portfolio</title>
+  <meta name="description" content="Expert interior design for bungalows, terraces, building elevations, pergolas, living rooms, kitchens, and bedrooms.">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+
+    <!-- ✏️  EDIT: Your studio / brand name -->
+    <a href="#hero" class="nav__logo">
+      <span class="nav__logo-main">AMD</span>
+      <span class="nav__logo-sub">Home Interiors</span>
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#expertise">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#process">Our Process</a></li>
+      <li><a href="#contact" class="nav__cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+
+  <!-- 📷  REPLACE: swap src with your best project photo (recommended: 1920×900px) -->
+  <img src="assets/images/hero.svg" alt="Interior design showcase" class="hero__bg" />
+
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <!-- ✏️  EDIT: Your tagline -->
+    <p class="hero__eyebrow">Interior Design &amp; Architecture</p>
+    <h1 class="hero__title">Spaces That Tell<br>Your Story</h1>
+    <p class="hero__sub">Bungalows · Terraces · Elevations · Pergolas · Interiors</p>
+    <div class="hero__actions">
+      <a href="#portfolio" class="btn btn--primary">View Portfolio</a>
+      <a href="#contact" class="btn btn--ghost">Get a Quote</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     EXPERTISE  (Service Cards)
+════════════════════════════════════════════ -->
+<section class="expertise section" id="expertise">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-eyebrow">What We Do</p>
+      <!-- ✏️  EDIT: Section heading -->
+      <h2 class="section-title">Our Expertise</h2>
+      <p class="section-desc">From grand bungalow facades to intimate bedroom retreats — we design every space with precision, warmth, and an unmistakably Indian sensibility.</p>
+    </div>
+
+    <div class="expertise__grid">
+
+      <!-- ── Card 1 ── -->
+      <article class="expertise-card">
+        <!-- 📷  REPLACE: src with a representative image for this service (600×400px) -->
+        <div class="expertise-card__img-wrap">
+          <img src="assets/images/expertise-bungalow.svg" alt="Bungalow design" />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">&#127968;</div>
+          <!-- ✏️  EDIT title and description -->
+          <h3>Bungalow Design</h3>
+          <p>Complete design solutions for independent bungalows — spatial planning, materials, finishes, and integrated landscaping.</p>
+        </div>
+      </article>
+
+      <!-- ── Card 2 ── -->
+      <article class="expertise-card">
+        <div class="expertise-card__img-wrap">
+          <!-- 📷  REPLACE src -->
+          <img src="assets/images/expertise-terrace.svg" alt="Terrace design" />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">&#127796;</div>
+          <h3>Terrace Design</h3>
+          <p>Transform rooftop terraces into living gardens — pergolas, seating zones, planters, lighting, and weather-proof finishes.</p>
+        </div>
+      </article>
+
+      <!-- ── Card 3 ── -->
+      <article class="expertise-card">
+        <div class="expertise-card__img-wrap">
+          <!-- 📷  REPLACE src -->
+          <img src="assets/images/expertise-elevation.svg" alt="Building elevation design" />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">&#127959;</div>
+          <h3>Building Elevation</h3>
+          <p>Exterior facades that make a statement — cladding, texture paint, stone work, window framing, and compound walls.</p>
+        </div>
+      </article>
+
+      <!-- ── Card 4 ── -->
+      <article class="expertise-card">
+        <div class="expertise-card__img-wrap">
+          <!-- 📷  REPLACE src -->
+          <img src="assets/images/expertise-pergola.svg" alt="Pergola design" />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">&#9729;</div>
+          <h3>Pergola Design</h3>
+          <p>Elegant pergola structures for gardens, terraces, and poolside — timber, metal, and PVC profiles with climbing plants.</p>
+        </div>
+      </article>
+
+      <!-- ── Card 5 ── -->
+      <article class="expertise-card">
+        <div class="expertise-card__img-wrap">
+          <!-- 📷  REPLACE src -->
+          <img src="assets/images/expertise-living.svg" alt="Living room interior design" />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">&#127968;</div>
+          <h3>Living Room</h3>
+          <p>Curated living spaces — furniture layouts, feature walls, false ceilings, lighting design, and bespoke joinery.</p>
+        </div>
+      </article>
+
+      <!-- ── Card 6 ── -->
+      <article class="expertise-card">
+        <div class="expertise-card__img-wrap">
+          <!-- 📷  REPLACE src -->
+          <img src="assets/images/expertise-kitchen.svg" alt="Modular kitchen design" />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">&#127859;</div>
+          <h3>Modular Kitchen</h3>
+          <p>Efficient Indian kitchens — modular cabinets, smart storage, premium finishes, and appliance integration.</p>
+        </div>
+      </article>
+
+      <!-- ── Card 7 ── -->
+      <article class="expertise-card">
+        <div class="expertise-card__img-wrap">
+          <!-- 📷  REPLACE src -->
+          <img src="assets/images/expertise-bedroom.svg" alt="Bedroom interior design" />
+        </div>
+        <div class="expertise-card__body">
+          <div class="expertise-card__icon">&#128716;</div>
+          <h3>Bedroom</h3>
+          <p>Serene, functional bedrooms — wardrobes, upholstered headboards, lighting layers, and cohesive colour palettes.</p>
+        </div>
+      </article>
+
+    </div><!-- /expertise__grid -->
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     PORTFOLIO
+════════════════════════════════════════════ -->
+<section class="portfolio section section--warm" id="portfolio">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-eyebrow">Featured Work</p>
+      <h2 class="section-title">Portfolio</h2>
+      <p class="section-desc">A selection of completed and upcoming projects. Click any image to view full size.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="portfolio__filters" role="tablist">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bungalow">Bungalow</button>
+      <button class="filter-btn" data-filter="terrace">Terrace</button>
+      <button class="filter-btn" data-filter="elevation">Elevation</button>
+      <button class="filter-btn" data-filter="pergola">Pergola</button>
+      <button class="filter-btn" data-filter="living">Living Room</button>
+      <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+      <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="portfolio__grid" id="portfolioGrid">
+
+      <!-- ════ BUNGALOW ════ -->
+
+      <!-- 📷  REPLACE src | ✏️  EDIT title + description -->
+      <div class="portfolio-item" data-category="bungalow">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/bungalow-1.svg" alt="Bungalow Project 1" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Bungalow Design</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item portfolio-item--wide" data-category="bungalow">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/bungalow-2.svg" alt="Bungalow Project 2" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Bungalow Design</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="bungalow">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/bungalow-3.svg" alt="Bungalow Project 3" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Bungalow Design</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ TERRACE ════ -->
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item portfolio-item--wide" data-category="terrace">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/terrace-1.svg" alt="Terrace Design 1" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Terrace Design</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="terrace">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/terrace-2.svg" alt="Terrace Design 2" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Terrace Design</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ ELEVATION ════ -->
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="elevation">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/elevation-1.svg" alt="Building Elevation 1" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Building Elevation</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item portfolio-item--wide" data-category="elevation">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/elevation-2.svg" alt="Building Elevation 2" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Building Elevation</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PERGOLA ════ -->
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="pergola">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/pergola-1.svg" alt="Pergola Design 1" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Pergola Design</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="pergola">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/pergola-2.svg" alt="Pergola Design 2" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Pergola Design</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ LIVING ROOM ════ -->
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item portfolio-item--wide" data-category="living">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/living-1.svg" alt="Living Room 1" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Living Room</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="living">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/living-2.svg" alt="Living Room 2" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Living Room</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ KITCHEN ════ -->
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="kitchen">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/kitchen-1.svg" alt="Kitchen 1" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Modular Kitchen</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="kitchen">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/kitchen-2.svg" alt="Kitchen 2" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Modular Kitchen</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ BEDROOM ════ -->
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item portfolio-item--wide" data-category="bedroom">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/bedroom-1.svg" alt="Bedroom 1" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Bedroom</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📷  REPLACE src -->
+      <div class="portfolio-item" data-category="bedroom">
+        <div class="portfolio-item__img-wrap">
+          <img src="assets/images/portfolio/bedroom-2.svg" alt="Bedroom 2" loading="lazy" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Bedroom</p>
+            <h3 class="portfolio-item__title">Project Name</h3>
+            <p class="portfolio-item__loc">Location, City</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /portfolio__grid -->
+  </div>
+</section>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+  <button class="lightbox__next" id="lightboxNext" aria-label="Next">&#8594;</button>
+  <div class="lightbox__inner">
+    <img id="lightboxImg" src="" alt="" />
+    <p id="lightboxCaption" class="lightbox__caption"></p>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     PROCESS
+════════════════════════════════════════════ -->
+<section class="process section" id="process">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-eyebrow">How We Work</p>
+      <h2 class="section-title">Our Design Process</h2>
+    </div>
+
+    <div class="process__steps">
+
+      <div class="process-step">
+        <div class="process-step__num">01</div>
+        <div class="process-step__body">
+          <!-- ✏️  EDIT step title and description -->
+          <h3>Discovery &amp; Brief</h3>
+          <p>We begin with a detailed site visit and client consultation to understand your lifestyle, requirements, budget, and vision for the space.</p>
+        </div>
+      </div>
+
+      <div class="process-step__divider" aria-hidden="true"></div>
+
+      <div class="process-step">
+        <div class="process-step__num">02</div>
+        <div class="process-step__body">
+          <h3>Concept &amp; Design</h3>
+          <p>We present 2D floor plans, 3D visualisations, material boards, and colour palettes — refined through your feedback until the design is exactly right.</p>
+        </div>
+      </div>
+
+      <div class="process-step__divider" aria-hidden="true"></div>
+
+      <div class="process-step">
+        <div class="process-step__num">03</div>
+        <div class="process-step__body">
+          <h3>Execution &amp; Supervision</h3>
+          <p>Our team manages vendors, site supervision, and quality checks through every stage — from civil work to final styling — ensuring zero compromise on quality.</p>
+        </div>
+      </div>
+
+      <div class="process-step__divider" aria-hidden="true"></div>
+
+      <div class="process-step">
+        <div class="process-step__num">04</div>
+        <div class="process-step__body">
+          <h3>Handover &amp; After-care</h3>
+          <p>We do a formal snag walk with you, address every item on the punch list, and provide after-care support for 6 months post-completion.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     STATS BAND
+════════════════════════════════════════════ -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-band__grid">
+
+      <!-- ✏️  EDIT: Update numbers to match your actual work -->
+      <div class="stat">
+        <span class="stat__num">50+</span>
+        <span class="stat__label">Projects Completed</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">12+</span>
+        <span class="stat__label">Years Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">100%</span>
+        <span class="stat__label">Client Satisfaction</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">7</span>
+        <span class="stat__label">Design Specialities</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════ -->
+<section class="contact section section--warm" id="contact">
+  <div class="container">
+
+    <div class="contact__inner">
+
+      <div class="contact__left">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Start Your Project</h2>
+        <!-- ✏️  EDIT: Your contact details -->
+        <p class="contact__intro">Ready to transform your space? Share your requirements and we'll get back to you within 24 hours.</p>
+
+        <ul class="contact__details">
+          <!-- ✏️  EDIT phone number -->
+          <li>
+            <span class="contact__icon">&#128222;</span>
+            <a href="tel:+919999999999">+91 99999 99999</a>
+          </li>
+          <!-- ✏️  EDIT email -->
+          <li>
+            <span class="contact__icon">&#9993;</span>
+            <a href="mailto:hello@amdhomeinteriors.com">hello@amdhomeinteriors.com</a>
+          </li>
+          <!-- ✏️  EDIT city/location -->
+          <li>
+            <span class="contact__icon">&#128205;</span>
+            <span>Pune, Maharashtra</span>
+          </li>
+        </ul>
+
+        <div class="contact__social">
+          <!-- ✏️  EDIT social links -->
+          <a href="#" class="social-btn" aria-label="Instagram">&#128247; Instagram</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">&#128172; WhatsApp</a>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm" novalidate>
+        <!-- ✏️  You can connect this form to Formspree or similar free services -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="Ravi Sharma" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="ravi@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="service">Project Type</label>
+          <select id="service" name="service">
+            <option value="">— Select a service —</option>
+            <option>Bungalow Design</option>
+            <option>Terrace Design</option>
+            <option>Building Elevation</option>
+            <option>Pergola Design</option>
+            <option>Living Room</option>
+            <option>Modular Kitchen</option>
+            <option>Bedroom</option>
+            <option>Full Home Interior</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" rows="4" placeholder="Location, approximate area, budget range, timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <!-- ✏️  EDIT brand name and tagline -->
+        <span class="footer__logo">AMD Home Interiors</span>
+        <p>Designing spaces that reflect who you are.</p>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="#expertise">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+    <!-- ✏️  EDIT copyright year and name -->
+    <p class="footer__copy">&copy; 2025 AMD Home Interiors. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

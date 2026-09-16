@@ -1,0 +1,70 @@
+<section class="contact section section--warm" id="contact">
+  <div class="container">
+    <div class="contact__inner">
+
+      <!-- Left: details from content/config.json -->
+      <div class="contact__left">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Start Your Project</h2>
+        <p class="contact__intro">
+          Ready to transform your space? Share your requirements and we'll
+          get back to you within 24 hours.
+        </p>
+        <ul class="contact__details">
+          <li>
+            <span class="contact__icon">&#128222;</span>
+            <a href="tel:{{ config.contact.phone|cut:' ' }}">{{ config.contact.phone }}</a>
+          </li>
+          <li>
+            <span class="contact__icon">&#9993;</span>
+            <a href="mailto:{{ config.contact.email }}">{{ config.contact.email }}</a>
+          </li>
+          <li>
+            <span class="contact__icon">&#128205;</span>
+            <span>{{ config.contact.location }}</span>
+          </li>
+        </ul>
+        <div class="contact__social">
+          <a href="{{ config.social.instagram }}" class="social-btn">&#128247; Instagram</a>
+          <a href="{{ config.social.whatsapp }}"  class="social-btn">&#128172; WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Right: enquiry form -->
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="Ravi Sharma" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="ravi@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="service">Project Type</label>
+          <select id="service" name="service">
+            <option value="">— Select a service —</option>
+            {% for svc in services %}
+            <option>{{ svc.title }}</option>
+            {% endfor %}
+            <option>Full Home Interior</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" rows="4"
+            placeholder="Location, approximate area, budget range, timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
+        <p class="form-note" id="formNote">{{ config.contact.form_note }}</p>
+      </form>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+[
+  {
+    "image":          "assets/images/portfolio/bungalow-1.svg",
+    "category":       "bungalow",
+    "category_label": "Bungalow Design",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/bungalow-2.svg",
+    "category":       "bungalow",
+    "category_label": "Bungalow Design",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           true
+  },
+  {
+    "image":          "assets/images/portfolio/bungalow-3.svg",
+    "category":       "bungalow",
+    "category_label": "Bungalow Design",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/terrace-1.svg",
+    "category":       "terrace",
+    "category_label": "Terrace Design",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           true
+  },
+  {
+    "image":          "assets/images/portfolio/terrace-2.svg",
+    "category":       "terrace",
+    "category_label": "Terrace Design",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/elevation-1.svg",
+    "category":       "elevation",
+    "category_label": "Building Elevation",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/elevation-2.svg",
+    "category":       "elevation",
+    "category_label": "Building Elevation",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           true
+  },
+  {
+    "image":          "assets/images/portfolio/pergola-1.svg",
+    "category":       "pergola",
+    "category_label": "Pergola Design",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/pergola-2.svg",
+    "category":       "pergola",
+    "category_label": "Pergola Design",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/living-1.svg",
+    "category":       "living",
+    "category_label": "Living Room",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           true
+  },
+  {
+    "image":          "assets/images/portfolio/living-2.svg",
+    "category":       "living",
+    "category_label": "Living Room",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/kitchen-1.svg",
+    "category":       "kitchen",
+    "category_label": "Modular Kitchen",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/kitchen-2.svg",
+    "category":       "kitchen",
+    "category_label": "Modular Kitchen",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  },
+  {
+    "image":          "assets/images/portfolio/bedroom-1.svg",
+    "category":       "bedroom",
+    "category_label": "Bedroom",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           true
+  },
+  {
+    "image":          "assets/images/portfolio/bedroom-2.svg",
+    "category":       "bedroom",
+    "category_label": "Bedroom",
+    "title":          "Project Name",
+    "location":       "Location, City",
+    "wide":           false
+  }
+]

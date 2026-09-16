@@ -1,0 +1,12 @@
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-band__grid">
+      {% for stat in config.stats %}
+      <div class="stat">
+        <span class="stat__num">{{ stat.number }}</span>
+        <span class="stat__label">{{ stat.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
