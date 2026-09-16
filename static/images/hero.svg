@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 900" role="img" aria-label="Hero Image">
+  <defs>
+    <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF18" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="900" fill="#2C1A0E"/>
+  <rect width="1920" height="900" fill="url(#g)"/>
+  <rect x="800" y="386" width="320" height="128" rx="6"
+        fill="none" stroke="#FFFFFF33" stroke-width="1.5" stroke-dasharray="10 5"/>
+  <text x="960" y="438" text-anchor="middle"
+        font-family="Georgia,serif" font-size="20" fill="#FFFFFF" font-weight="bold">Hero Image</text>
+  <text x="960" y="468" text-anchor="middle"
+        font-family="sans-serif" font-size="12" fill="#FFFFFFB0">1920x900 px — your best project photo</text>
+  <text x="1912" y="892" text-anchor="end"
+        font-family="monospace" font-size="10" fill="#FFFFFF44">placeholder · 1920x900</text>
+</svg>

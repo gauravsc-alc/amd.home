@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Building Elevation">
+  <defs>
+    <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF18" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#3A5C8A"/>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <rect x="240" y="161" width="320" height="128" rx="6"
+        fill="none" stroke="#FFFFFF33" stroke-width="1.5" stroke-dasharray="10 5"/>
+  <text x="400" y="213" text-anchor="middle"
+        font-family="Georgia,serif" font-size="20" fill="#FFFFFF" font-weight="bold">Building Elevation</text>
+  <text x="400" y="243" text-anchor="middle"
+        font-family="sans-serif" font-size="12" fill="#FFFFFFB0">Replace with facade / elevation photo</text>
+  <text x="792" y="442" text-anchor="end"
+        font-family="monospace" font-size="10" fill="#FFFFFF44">placeholder · 800x450</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Indian bedroom illustration">
+  <rect width="1200" height="700" fill="#f3f0fb"/>
+  <rect y="500" width="1200" height="200" fill="#c9c0df"/>
+  <rect x="260" y="300" width="680" height="200" rx="14" fill="#7a6a9f"/>
+  <rect x="300" y="340" width="600" height="120" rx="12" fill="#ece7f7"/>
+  <rect x="260" y="250" width="680" height="70" rx="10" fill="#5f4f85"/>
+  <rect x="340" y="360" width="160" height="80" rx="8" fill="#c6b6e8"/>
+  <rect x="700" y="360" width="160" height="80" rx="8" fill="#c6b6e8"/>
+  <circle cx="180" cy="140" r="55" fill="#e2a86c"/>
+  <circle cx="1020" cy="140" r="55" fill="#e2a86c"/>
+  <text x="600" y="620" font-family="Arial, sans-serif" font-size="44" text-anchor="middle" fill="#4b3f6d">Bedroom Concept</text>
+</svg>
