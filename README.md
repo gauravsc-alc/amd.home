@@ -10,6 +10,8 @@ All content is managed through **JSON** and **Markdown** files — no HTML editi
 
 **https://gauravsc-alc.github.io/amd.home/**
 
+> If you see `deltapublications.co.in/amd.home/` instead, go to **Settings > Pages** in your GitHub repository and clear the Custom Domain field.
+
 ---
 
 ## How It Works
@@ -223,19 +225,93 @@ To receive real emails:
 
 ---
 
-## GitHub Pages Deployment (One-Time Setup)
+## GitHub Pages Deployment
 
-1. Push this repo to GitHub
-2. Go to **Settings → Pages**
-3. Source: **Deploy from a branch**
-4. Branch: **`gh-pages`** / **`/ (root)`**
-5. Save
+### One-Time Setup (do this once)
 
-After that, every push to `main` triggers the GitHub Actions workflow (`deploy.yml`), which:
-1. Installs Python dependencies
-2. Regenerates placeholder images
-3. Runs `python build.py` to generate `docs/`
-4. Deploys `docs/` to the `gh-pages` branch
+#### Step 1 — Create a GitHub repository
+
+1. Go to **https://github.com/new**
+2. Name it `amd.home` (or any name you prefer)
+3. Set it to **Public**
+4. Do **not** initialise with a README (you already have one)
+5. Click **Create repository**
+
+#### Step 2 — Push your code to GitHub
+
+Open a terminal in the project folder and run:
+
+```bash
+git init                          # only if not already a git repo
+git add .
+git commit -m "Initial commit — Ashapura Mata Designs website"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/amd.home.git
+git push -u origin main
+```
+
+Replace `YOUR_USERNAME` with your GitHub username.
+
+#### Step 3 — Enable GitHub Pages
+
+1. Open your repository on GitHub
+2. Go to **Settings** (top menu)
+3. Click **Pages** in the left sidebar
+4. Under **Source**, select **Deploy from a branch**
+5. Branch: **`gh-pages`** — Folder: **`/ (root)`**
+6. Click **Save**
+
+#### Step 4 — Wait for the first deploy (~2 minutes)
+
+GitHub Actions automatically runs when you push to `main`. To watch progress:
+
+1. Click the **Actions** tab in your repository
+2. You will see a workflow called **Build & Deploy to GitHub Pages**
+3. Wait for the green tick — your site is live
+
+#### Step 5 — Open your live site
+
+```
+https://YOUR_USERNAME.github.io/amd.home/
+```
+
+---
+
+### Every Update After That
+
+Whenever you change content, add photos, or edit any file:
+
+```bash
+git add .
+git commit -m "Describe what you changed"
+git push
+```
+
+GitHub Actions rebuilds and redeploys automatically. Live in about 60 seconds.
+
+---
+
+### What the Automation Does (behind the scenes)
+
+Every push to `main` triggers `.github/workflows/deploy.yml`, which:
+
+1. Checks out your code on a fresh Ubuntu machine
+2. Installs Python + Django + Markdown
+3. Runs `python generate_placeholders.py` — creates SVG image slots
+4. Runs `python build.py` — renders HTML into `docs/`
+5. Pushes `docs/` to the `gh-pages` branch
+6. GitHub Pages serves `gh-pages` as your live website
+
+---
+
+### Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| Actions tab shows a red cross | Click the failed run, read the error log, fix the issue, push again |
+| Site shows old content | Hard-refresh browser with Ctrl+Shift+R (or Cmd+Shift+R on Mac) |
+| "Page not found" on GitHub Pages | Check Settings > Pages — branch must be `gh-pages`, not `main` |
+| Images not loading | Make sure image paths in `portfolio.json` start with `images/`, not `/images/` |
 
 ---
 
