@@ -54,11 +54,22 @@ def copy_static():
     shutil.copytree(src, dst, dirs_exist_ok=True)
 
 
+def fix_static_paths():
+    """Replace absolute /static/ with relative static/ so the site works at any subpath."""
+    for html_file in DOCS.glob("**/*.html"):
+        content = html_file.read_text(encoding="utf-8")
+        fixed = content.replace('="/static/', '="static/')
+        if fixed != content:
+            html_file.write_text(fixed, encoding="utf-8")
+            print(f"  Fixed static paths in {html_file.name}")
+
+
 def main():
     print("\nBuilding static site ...")
     clean()
     build_pages()
     copy_static()
+    fix_static_paths()
     print("\nBuild complete!  Output: docs/\n")
 
 
