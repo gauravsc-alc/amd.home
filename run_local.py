@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-run_local.py — Start the AMD Home Interiors development server.
+run_local.py — Start the Ashapura Maison Design development server.
 
 Checks for dependencies, installs them if missing, then launches
 Django's built-in server with live template reloading.
@@ -39,7 +39,7 @@ def main():
     os.chdir(ROOT)
 
     print("=" * 52)
-    print("  AMD Home Interiors — Development Server")
+    print("  Ashapura Maison Design — Development Server")
     print("  URL: http://127.0.0.1:8000/")
     print("  Press Ctrl+C to stop")
     print("=" * 52)

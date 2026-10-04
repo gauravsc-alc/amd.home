@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
-   AMD Home Interiors — main.js
+   Ashapura Maison Design — main.js
    Portfolio filter · Lightbox · Nav scroll · Mobile menu
 ───────────────────────────────────────────────────────────── */
 

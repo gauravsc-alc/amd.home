@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate SVG placeholder images for AMD Home Interiors portfolio website.
+Generate SVG placeholder images for Ashapura Maison Design portfolio website.
 
 Run once:
     python generate_placeholders.py

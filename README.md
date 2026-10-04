@@ -1,4 +1,4 @@
-# AMD Home Interiors — Portfolio Website
+# Ashapura Maison Design — Portfolio Website
 
 A professional **interior design portfolio** built with **Django + Python**, deployed as a **static site** on GitHub Pages.
 
@@ -96,6 +96,7 @@ Open **http://127.0.0.1:8000/** in your browser.
 
 The server reloads automatically when you edit templates or Python files.
 When you edit JSON content files, refresh the browser to see changes.
+Note: this dev server renders from `templates/` + `content/` and does **not** use the static build output.
 
 ---
 
@@ -106,6 +107,7 @@ python build.py
 ```
 
 Output goes to `docs/`. Open `docs/index.html` in a browser to preview the exact production build.
+For convenience (e.g. VS Code Live Server on the project root), the build also updates the repo-root `index.html`.
 
 ---
 
@@ -161,7 +163,7 @@ Open `content/config.json` and update any value:
 
 ```json
 {
-  "title": "AMD Home Interiors",
+  "title": "Ashapura Maison Design",
   "contact": {
     "phone": "+91 98765 43210",
     "email": "your@email.com",
@@ -180,7 +182,7 @@ Open `content/config.json` and update any value:
 Open `content/pages/home.md` — it's a standard Markdown file:
 
 ```markdown
-## About AMD Home Interiors
+## About Ashapura Maison Design
 
 We specialise in bungalow design, terrace spaces ...
 
@@ -244,7 +246,7 @@ Open a terminal in the project folder and run:
 ```bash
 git init                          # only if not already a git repo
 git add .
-git commit -m "Initial commit — Ashapura Mata Designs website"
+git commit -m "Initial commit — Ashapura Maison Design website"
 git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/amd.home.git
 git push -u origin main

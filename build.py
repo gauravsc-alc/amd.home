@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build.py — Static site generator for AMD Home Interiors.
+build.py — Static site generator for Ashapura Maison Design.
 
 Uses Django's test client to render pages to HTML, then copies
 static files. Output goes to docs/ for GitHub Pages.
@@ -25,6 +25,7 @@ from django.test import Client             # noqa: E402
 from django.conf import settings           # noqa: E402
 
 DOCS = Path("docs")
+ROOT_INDEX = Path("index.html")
 
 
 def clean():
@@ -64,12 +65,21 @@ def fix_static_paths():
             print(f"  Fixed static paths in {html_file.name}")
 
 
+def mirror_root_index():
+    """Keep repo-root index.html in sync for simple root-folder previews (e.g. VS Code Live Server)."""
+    built_index = DOCS / "index.html"
+    if built_index.exists():
+        ROOT_INDEX.write_text(built_index.read_text(encoding="utf-8"), encoding="utf-8")
+        print("  Mirrored docs/index.html -> index.html")
+
+
 def main():
     print("\nBuilding static site ...")
     clean()
     build_pages()
     copy_static()
     fix_static_paths()
+    mirror_root_index()
     print("\nBuild complete!  Output: docs/\n")
 
 

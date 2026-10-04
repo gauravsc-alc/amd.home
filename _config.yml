@@ -1,11 +1,11 @@
 # ─────────────────────────────────────────────────────────────
-#  AMD Home Interiors — Site Configuration
+#  Ashapura Maison Design — Site Configuration
 #  Edit this file to update every heading, contact detail,
 #  stat, and colour accent across the whole website.
 # ─────────────────────────────────────────────────────────────
 
 # ── Site Identity ───────────────────────────────────────────
-title:       AMD Home Interiors
+title:       Ashapura Maison Design
 tagline:     Spaces That Tell Your Story
 description: >
   Expert interior design for bungalows, terraces, building elevations,
@@ -50,7 +50,7 @@ stats:
 # ── Footer ──────────────────────────────────────────────────
 footer:
   tagline: "Designing spaces that reflect who you are."
-  copy:    "&copy; 2025 AMD Home Interiors. All rights reserved."
+  copy:    "&copy; 2025 Ashapura Maison Design. All rights reserved."
 
 # ── Jekyll Build ────────────────────────────────────────────
 markdown:  kramdown

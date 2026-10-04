@@ -1,4 +1,4 @@
-## About AMD Home Interiors
+## About Ashapura Maison Design
 
 We are a dedicated interior design studio specialising in **bungalow design**, **terrace spaces**, **building elevations**, **pergola structures**, and complete **home interiors** — living rooms, modular kitchens, and bedrooms.
 
