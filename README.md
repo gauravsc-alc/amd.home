@@ -68,6 +68,13 @@ amd.home/
 
 ---
 
+## Detailed Guides
+
+- [Image Update and Deployment Guide](documentation/IMAGE_UPDATE_AND_DEPLOYMENT_GUIDE.md)
+- [GitHub Pages Hosting Guide](documentation/GITHUB_PAGES_HOSTING.md)
+
+---
+
 ## Local Development
 
 ### Prerequisites

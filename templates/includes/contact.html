@@ -24,9 +24,13 @@
             <span>{{ config.contact.location }}</span>
           </li>
         </ul>
-        <div class="contact__social">
-          <a href="{{ config.social.instagram }}" class="social-btn">&#128247; Instagram</a>
-          <a href="{{ config.social.whatsapp }}"  class="social-btn">&#128172; WhatsApp</a>
+        <div class="contact__social" aria-label="Social profiles">
+          {% for name, url in config.social.items %}
+          <a href="{{ url }}" class="social-btn" aria-label="{{ name|title }}" title="{{ name|title }}">
+            <i class="fa-brands {% if name == 'twitter' %}fa-x-twitter{% else %}fa-{{ name }}{% endif %}" aria-hidden="true"></i>
+            <span class="visually-hidden">{{ name|title }}</span>
+          </a>
+          {% endfor %}
         </div>
       </div>
 

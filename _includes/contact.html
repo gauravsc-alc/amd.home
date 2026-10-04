@@ -26,13 +26,17 @@
           </li>
         </ul>
 
-        <div class="contact__social">
-          <a href="{{ site.social.instagram }}" class="social-btn" aria-label="Instagram">
-            &#128247; Instagram
+        <div class="contact__social" aria-label="Social profiles">
+          {% for social in site.social %}
+          {% assign name = social[0] %}
+          {% assign url = social[1] %}
+          {% assign icon_name = name %}
+          {% if name == "twitter" %}{% assign icon_name = "x-twitter" %}{% endif %}
+          <a href="{{ url }}" class="social-btn" aria-label="{{ name | capitalize }}" title="{{ name | capitalize }}">
+            <i class="fa-brands fa-{{ icon_name }}" aria-hidden="true"></i>
+            <span class="visually-hidden">{{ name | capitalize }}</span>
           </a>
-          <a href="{{ site.social.whatsapp }}" class="social-btn" aria-label="WhatsApp">
-            &#128172; WhatsApp
-          </a>
+          {% endfor %}
         </div>
       </div>
 

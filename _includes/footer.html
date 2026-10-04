@@ -13,6 +13,18 @@
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="footer__social" aria-label="Social profiles">
+        {% for social in site.social %}
+        {% assign name = social[0] %}
+        {% assign url = social[1] %}
+        {% assign icon_name = name %}
+        {% if name == "twitter" %}{% assign icon_name = "x-twitter" %}{% endif %}
+        <a href="{{ url }}" class="social-btn social-btn--footer" aria-label="{{ name | capitalize }}" title="{{ name | capitalize }}">
+          <i class="fa-brands fa-{{ icon_name }}" aria-hidden="true"></i>
+          <span class="visually-hidden">{{ name | capitalize }}</span>
+        </a>
+        {% endfor %}
+      </div>
 
     </div>
     <p class="footer__copy">{{ site.footer.copy }}</p>

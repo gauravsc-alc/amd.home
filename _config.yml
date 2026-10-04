@@ -33,8 +33,20 @@ contact:
 
 # ── Social Links ────────────────────────────────────────────
 social:
-  instagram: "#"     # ✏️  Replace # with your Instagram URL
-  whatsapp:  "#"     # ✏️  Replace # with your WhatsApp link
+  instagram: "#"
+  whatsapp:  "#"
+  facebook:  "#"
+  linkedin:  "#"
+  twitter:   "#"
+  pinterest: "#"
+  youtube:   "#"
+  telegram:  "#"
+  tiktok:    "#"
+  snapchat:  "#"
+  reddit:    "#"
+  medium:    "#"
+  github:    "#"
+  behance:   "#"
 
 # ── Stats Band ──────────────────────────────────────────────
 stats:

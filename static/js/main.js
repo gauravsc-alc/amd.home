@@ -22,6 +22,28 @@ navLinks.querySelectorAll('a').forEach(link =>
 );
 
 // ── Portfolio filter ──────────────────────────────────────────
+// Reveal content as it enters the viewport
+const revealItems = document.querySelectorAll(
+  '.section-header, .expertise-card, .portfolio-item, .process-step, .stat, .about__inner, .contact__left, .contact__form'
+);
+
+if ('IntersectionObserver' in window) {
+  revealItems.forEach((item, index) => {
+    item.classList.add('reveal-on-scroll');
+    item.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+  });
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.16, rootMargin: '0px 0px -40px 0px' });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+}
+
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));

@@ -15,22 +15,34 @@
   },
 
   "contact": {
-    "phone":     "+91 99999 99999",
+    "phone":     "+91 9035 116 542",
     "email":     "hello@amdhomeinteriors.com",
-    "location":  "Pune, Maharashtra",
+    "location":  "Bangalore, Karnataka",
     "form_note": "We reply within 24 hours."
   },
 
   "social": {
     "instagram": "#",
-    "whatsapp":  "#"
+    "whatsapp":  "#",
+    "facebook":  "#",
+    "linkedin":  "#",
+    "twitter":   "#",
+    "pinterest": "#",
+    "youtube":   "#",
+    "telegram":  "#",
+    "tiktok":    "#",
+    "snapchat":  "#",
+    "reddit":    "#",
+    "medium":    "#",
+    "github":    "#",
+    "behance":   "#"
   },
 
   "stats": [
-    { "number": "50+",  "label": "Projects Completed" },
-    { "number": "12+",  "label": "Years Experience"   },
+    { "number": "15+",  "label": "Projects Completed" },
+    { "number": "5+",  "label": "Years Experience"   },
     { "number": "100%", "label": "Client Satisfaction" },
-    { "number": "7",    "label": "Design Specialities" }
+    { "number": "7A",    "label": "Design Specialities" }
   ],
 
   "footer": {
