@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Indian style living room illustration">
+  <rect width="1200" height="700" fill="#f6efe7"/>
+  <rect y="500" width="1200" height="200" fill="#d7b899"/>
+  <rect x="160" y="320" width="300" height="180" rx="18" fill="#8b5e3c"/>
+  <rect x="740" y="320" width="300" height="180" rx="18" fill="#8b5e3c"/>
+  <rect x="300" y="430" width="600" height="70" rx="12" fill="#9c6a46"/>
+  <circle cx="600" cy="200" r="90" fill="#d18b47"/>
+  <circle cx="600" cy="200" r="70" fill="#f7d6a7"/>
+  <rect x="520" y="120" width="160" height="24" fill="#8b5e3c"/>
+  <text x="600" y="610" font-family="Arial, sans-serif" font-size="44" text-anchor="middle" fill="#5c3b21">Living Room Concept</text>
+</svg>
