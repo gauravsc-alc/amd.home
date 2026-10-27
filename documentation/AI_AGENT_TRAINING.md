@@ -46,6 +46,7 @@ Task: [describe the exact outcome and approved inputs here]
 | Scenario | Expected observation |
 | --- | --- |
 | Fresh visible page, normal motion | Architecture -> Living -> Kitchen -> Bedroom, 6.2 seconds each |
+| IntersectionObserver unavailable or callbacks delayed | Direct initial/scroll/resize visibility checks still start and pause the concept sequence |
 | Last scene completes | Bedroom remains assembled, Play again appears; no endless loop |
 | Pause during a delayed layer | Artwork and countdown freeze; Resume continues the remaining time |
 | Replay from any state | Architecture restarts; no duplicate timers or skipped scenes |

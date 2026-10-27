@@ -10,9 +10,9 @@ The site now has separate Home, Services, Projects, Our Process, About, and Cont
 
 ## Live Website
 
-**https://gauravsc-alc.github.io/amd.home/**
+**https://www.amd.homes/**
 
-> If you see `deltapublications.co.in/amd.home/` instead, go to **Settings > Pages** in your GitHub repository and clear the Custom Domain field.
+> The repository is named `amd.home`; the public domain is `www.amd.homes`. If a push changes the domain, follow the [domain correction guide](documentation/DOMAIN_CORRECTION_GUIDE.md). Keep the Pages custom domain set to `www.amd.homes`, not blank.
 
 ---
 

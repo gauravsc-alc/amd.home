@@ -80,7 +80,7 @@ if (houseScene) {
   let started = false;
   let paused = false;
   let finished = false;
-  let visible = !('IntersectionObserver' in window);
+  let visible = false;
 
   function stopTimer() {
     if (timer === null) return;
@@ -147,6 +147,17 @@ if (houseScene) {
     syncPlayback();
   }
 
+  function updateHouseVisibility() {
+    const bounds = houseScene.getBoundingClientRect();
+    const visibleWidth = Math.max(0, Math.min(bounds.right, window.innerWidth) - Math.max(bounds.left, 0));
+    const visibleHeight = Math.max(0, Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0));
+    const area = bounds.width * bounds.height;
+    const nextVisible = area > 0 && visibleWidth * visibleHeight / area >= 0.12;
+    if (visible === nextVisible) return;
+    visible = nextVisible;
+    syncPlayback();
+  }
+
   selectors.hidden = false;
   sceneButtons.forEach((button, index) => button.addEventListener('click', () => {
     started = true;
@@ -166,14 +177,15 @@ if (houseScene) {
   document.addEventListener('visibilitychange', syncPlayback);
   window.addEventListener('pagehide', stopTimer);
   window.addEventListener('pageshow', syncPlayback);
+  window.addEventListener('scroll', updateHouseVisibility, { passive: true });
+  window.addEventListener('resize', updateHouseVisibility);
+  window.addEventListener('load', updateHouseVisibility);
   new MutationObserver(syncPlayback).observe(document.body, { attributes: true, attributeFilter: ['data-animations'] });
   if ('IntersectionObserver' in window) {
-    const houseObserver = new IntersectionObserver(entries => {
-      visible = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.12;
-      syncPlayback();
-    }, { threshold: [0, 0.12] });
+    const houseObserver = new IntersectionObserver(updateHouseVisibility, { threshold: [0, 0.12] });
     houseObserver.observe(houseScene);
   }
+  updateHouseVisibility();
   syncPlayback();
 }
 

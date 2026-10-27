@@ -42,6 +42,7 @@ It uses local SVG, CSS, and a small JavaScript controller, not an external plugi
 - **Pause / Resume** freezes both the assembly and the scene countdown. **Replay all** restarts at Architecture. At the end, **Play again** restarts; it does not loop forever.
 - Scene buttons immediately show a completed illustration and pause the sequence. Resume animates that scene, then continues with subsequent scenes. Keyboard users can Tab to each button and press Enter or Space; focus is never moved by playback.
 - Playback suspends when the figure is less than 12% visible or the browser document is hidden, preserving remaining time. Returning does not override an intentional user pause.
+- Initial layout, scrolling, resizing, and window load also check visibility directly, so playback does not depend on the first IntersectionObserver callback arriving. Scroll the illustration into view on smaller screens; intentionally offscreen animation remains paused.
 - A visitor's reduced-motion preference disables animation and hides playback controls. Scene buttons still switch completed illustrations. Turning motion off mid-playback stops the sequence; turning it back on requires Resume if playback had already started.
 - Without JavaScript, the fully assembled house remains visible and nonfunctional controls stay hidden; the ordinary portfolio link still works.
 - Page headings, cards, and images retain restrained entrance and hover animations.

@@ -37,6 +37,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
           force_orphan: true
-          # Set repository variable CUSTOM_DOMAIN to your GoDaddy domain,
-          # for example: www.example.com
-          cname: ${{ vars.CUSTOM_DOMAIN }}
+          cname: www.amd.homes
