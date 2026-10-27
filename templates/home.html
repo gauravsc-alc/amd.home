@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 {% include "includes/hero.html" %}
-{% include "includes/expertise.html" %}
+<section class="section home-paths" id="discover">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">A home, thoughtfully made</p>
+      <h2 class="section-title">Good design begins with you.</h2>
+      <p class="section-desc">Your routines, your people, your sense of belonging. Discover how we bring them together in spaces that feel unmistakably yours.</p>
+    </div>
+    <div class="home-paths__grid">
+      <a class="home-path" href="services.html"><span class="home-path__number">01 / EXPLORE</span><h3>Find your space</h3><p>From a quiet bedroom to an entire home, discover our expertise.</p><span class="home-path__action">Our services &rarr;</span></a>
+      <a class="home-path" href="process.html"><span class="home-path__number">02 / ENVISION</span><h3>See the journey</h3><p>Clear steps, considered choices, and care at every stage.</p><span class="home-path__action">Our process &rarr;</span></a>
+      <a class="home-path" href="about.html"><span class="home-path__number">03 / CONNECT</span><h3>Meet our philosophy</h3><p>Rooted in Indian life. Designed around your own story.</p><span class="home-path__action">About the studio &rarr;</span></a>
+    </div>
+  </div>
+</section>
 {% if config.portfolio.enabled != False %}
-{% include "includes/portfolio.html" %}
+{% include "includes/portfolio.html" with portfolio=portfolio|slice:':3' preview=True %}
 {% endif %}
-{% include "includes/process.html" %}
 {% include "includes/stats.html" %}
-{% include "includes/about.html" %}
-{% include "includes/contact.html" %}
-{% endblock %}
-{% block overlays %}
-{% if config.portfolio.enabled != False %}
-{% include "includes/lightbox.html" %}
-{% endif %}
+{% include "includes/next-step.html" %}
 {% endblock %}

@@ -4,6 +4,8 @@ A professional **interior design portfolio** built with **Django + Python**, dep
 
 All content is managed through **JSON** and **Markdown** files — no HTML editing needed to add projects, update contact details, or change text.
 
+The site now has separate Home, Services, Projects, Our Process, About, and Contact pages. Every project opens its own HTML gallery. The homepage plays four portfolio-related concepts in sequence: architecture, living room, kitchen, and bedroom, with pause/resume, replay, scene selection, and reduced-motion support.
+
 ---
 
 ## Live Website
@@ -40,7 +42,8 @@ amd.home/
 │
 ├── content/                     ← ALL YOUR EDITABLE CONTENT
 │   ├── config.json              │  Site title, contact, stats, hero text
-│   ├── portfolio.json           │  Portfolio projects (add yours here)
+│   ├── page_metadata.json       │  Page headings, search titles, descriptions
+│   ├── portfolio.json           │  Projects with nested room/image galleries
 │   ├── services.json            │  Service card content
 │   ├── process.json             │  Process steps
 │   └── pages/
@@ -49,14 +52,15 @@ amd.home/
 ├── static/images/               ← DROP YOUR PHOTOS HERE
 │   ├── hero.svg                 │  Main hero image (1920x900)
 │   ├── expertise-*.svg          │  Service card images (800x450)
-│   └── portfolio/
-│       └── *.svg                │  Project photos (800x600 or 1200x675)
+│   ├── portfolio/               │  Existing hero/service images and placeholders
+│   └── projects/                │  All imported project images, grouped by room
 │
 ├── amd_site/                    ← Django project (settings, urls, wsgi)
 ├── site_app/                    ← Django app (views, content_loader)
 ├── templates/                   ← HTML templates (base + 10 includes)
 ├── static/css/style.css         ← All styles
-├── static/js/main.js            ← Portfolio filter, lightbox, nav
+├── static/js/main.js            ← Project galleries, lightbox, nav
+├── scripts/import-project-images.ps1 ← Import all project folders (Windows)
 │
 ├── build.py                     ← Generates docs/ from Django
 ├── run_local.py                 ← Starts local dev server
@@ -71,6 +75,13 @@ amd.home/
 ## Detailed Guides
 
 - [Image Update and Deployment Guide](documentation/IMAGE_UPDATE_AND_DEPLOYMENT_GUIDE.md)
+- [Project Folder Galleries and Repeat Imports](documentation/PROJECT_GALLERY_GUIDE.md)
+- [Page Navigation and Home Animation](documentation/NAVIGATION_AND_ANIMATION_GUIDE.md)
+- [AI Agent Setup and Project Handbook](documentation/AI_AGENT_GUIDE.md)
+- [AI Agent Training Exercises and Acceptance Checks](documentation/AI_AGENT_TRAINING.md)
+- Agent entry points: [AGENTS.md](AGENTS.md) for Codex and [CLAUDE.md](CLAUDE.md) for Claude Code
+- [Search Engines and AI Indexing](documentation/SEARCH_AND_AI_INDEXING_GUIDE.md)
+- [Social Media Setup and Updates](documentation/SOCIAL_MEDIA_SETUP_GUIDE.md)
 - [GitHub Pages Hosting Guide](documentation/GITHUB_PAGES_HOSTING.md)
 - [Website Features and Portfolio Switch](documentation/WEBSITE_FEATURES.md)
 - [360-degree / VR Setup](documentation/VR_SETUP_GUIDE.md)
@@ -117,53 +128,24 @@ python build.py
 ```
 
 Output goes to `docs/`. Open `docs/index.html` in a browser to preview the exact production build.
-For convenience (e.g. VS Code Live Server on the project root), the build also updates the repo-root `index.html`.
+For convenience (e.g. VS Code Live Server on the project root), the build also updates repository-root preview pages and `sitemap.xml`. Root previews other than the existing `index.html` are ignored by Git; build once after cloning before using them. The generated-page manifest removes stale preview copies when a project is unpublished.
 
 ---
 
 ## Adding a New Portfolio Project
 
-### Step 1 — Add your photo
+Each top-level source folder becomes a clickable project with its own HTML page; its subfolders become room galleries. All 53 supplied images are included, and the empty Project 5 displays a coming-soon card. The source folder `mujeet yelanka` is publicly labeled Project 6.
 
-Drop your photo into `static/images/portfolio/`:
+Add photos to the source folders, then import them from Windows PowerShell:
 
-```
-static/images/portfolio/bungalow-villa.jpg
-```
-
-Recommended sizes:
-- Regular card: **800 × 600 px**
-- Wide card (spans 2 cols): **1200 × 675 px**
-
-### Step 2 — Add an entry to `content/portfolio.json`
-
-Open `content/portfolio.json` and add a new object:
-
-```json
-{
-  "image":          "images/portfolio/bungalow-villa.jpg",
-  "category":       "bungalow",
-  "category_label": "Bungalow Design",
-  "title":          "Green Valley Bungalow",
-  "location":       "Kothrud, Pune",
-  "wide":           false
-}
+```powershell
+.\scripts\import-project-images.ps1 -SourceRoot 'H:\Rekha_Projects\my projects'
+.\.venv\Scripts\python.exe run_local.py
 ```
 
-Set `"wide": true` to make the card span two columns (good for landscape photos).
+The importer creates optimized files under `static/images/projects/` and updates the nested projects in `content/portfolio.json`. Edit titles, descriptions, covers, optional URL `slug`, and `enabled` there. Existing visibility switches, slugs, and captions survive repeat imports. Originals are not modified.
 
-**Categories:** `bungalow` · `terrace` · `elevation` · `pergola` · `living` · `kitchen` · `bedroom`
-
-### Step 3 — Preview and push
-
-```bash
-python run_local.py           # check locally
-git add .
-git commit -m "Add Green Valley Bungalow project"
-git push
-```
-
-GitHub Actions builds and deploys automatically — live in about 60 seconds.
+See the [Project Gallery Guide](documentation/PROJECT_GALLERY_GUIDE.md) for the complete format and repeat-import behavior. Stop the preview, run `python build.py`, review changes, and commit/push when ready. The existing GitHub Actions workflow publishes pushes to `main`; no external drive is required on GitHub Pages.
 
 ---
 

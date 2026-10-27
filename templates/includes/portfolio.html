@@ -3,46 +3,27 @@
   <div class="container">
     <div class="section-header">
       <p class="section-eyebrow">Featured Work</p>
-      <h2 class="section-title">Portfolio</h2>
-      <p class="section-desc">
-        Explore our interior design concepts and project renders.
-        Click any image to view full size.
-      </p>
+      <h2 class="section-title">Spaces with a story</h2>
+      <p class="section-desc">Choose a project to step inside its own gallery. Every room, every view, at your own pace.</p>
     </div>
-
-    <!-- Filter tabs — categories come from content/portfolio.json -->
-    <div class="portfolio__filters" role="group" aria-label="Filter projects by service">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="bungalow">Bungalow</button>
-      <button class="filter-btn" data-filter="terrace">Terrace</button>
-      <button class="filter-btn" data-filter="elevation">Elevation</button>
-      <button class="filter-btn" data-filter="pergola">Pergola</button>
-      <button class="filter-btn" data-filter="living">Living Room</button>
-      <button class="filter-btn" data-filter="kitchen">Kitchen</button>
-      <button class="filter-btn" data-filter="bedroom">Bedroom</button>
-    </div>
-
-    <!-- Grid — looped from content/portfolio.json -->
-    <div class="portfolio__grid" id="portfolioGrid">
-{% for item in portfolio %}
-{% if item.enabled != False %}
-      <a class="portfolio-item{% if item.wide %} portfolio-item--wide{% endif %}"
-         href="{% static item.image %}" data-category="{{ item.category }}"
-         aria-label="View {{ item.title }}: {{ item.category_label }}">
-        <div class="portfolio-item__img-wrap">
-          <img src="{% static item.image %}"
-               alt="{{ item.title }} — {{ item.category_label }}"
-               loading="lazy" decoding="async" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">{{ item.category_label }}</p>
-            <h3 class="portfolio-item__title">{{ item.title }}</h3>
-            <p class="portfolio-item__loc">{{ item.location }}</p>
-          </div>
-        </div>
-      </a>
+    <div class="project-grid">
+{% for project in portfolio %}
+      <a class="project-card project-card__summary" href="{{ project.url }}" aria-label="Explore {{ project.title }}: {{ project.image_count }} images">
+{% if project.cover %}
+        <img class="project-card__cover" src="{% static project.cover %}" alt="{{ project.title }} design preview" loading="lazy" decoding="async" width="960" height="600">
+{% else %}
+        <span class="project-card__placeholder">A new story is taking shape</span>
 {% endif %}
+        <span class="project-card__intro">
+          <span class="project-card__eyebrow">{% if project.image_count %}{{ project.image_count }} image{{ project.image_count|pluralize }} &middot; {{ project.rooms|length }} space{{ project.rooms|length|pluralize }}{% else %}Images coming soon{% endif %}</span>
+          <span class="project-card__title">{{ project.title }}</span>
+          <span class="project-card__action">Explore project <span aria-hidden="true">&nearr;</span></span>
+        </span>
+      </a>
+{% empty %}
+      <p>New projects are coming soon.</p>
 {% endfor %}
     </div>
-    <p class="portfolio__status" id="portfolioStatus" role="status" aria-live="polite"></p>
+{% if preview %}<div class="section-action"><a href="portfolio.html" class="btn btn--primary">Explore all projects &rarr;</a></div>{% endif %}
   </div>
 </section>

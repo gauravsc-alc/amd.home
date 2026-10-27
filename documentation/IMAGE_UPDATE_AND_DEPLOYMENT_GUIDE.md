@@ -6,8 +6,8 @@ This project uses Django templates and JSON content files to generate a static w
 
 - Hero image path: `content/config.json`, under `hero.image`
 - Service image paths: `content/services.json`, under each service's `image`
-- Portfolio image paths: `content/portfolio.json`, under each project's `image`
-- Image files: `static/images/` and `static/images/portfolio/`
+- Portfolio image paths: `content/portfolio.json`, under each project's `cover` and `rooms[].images[].image`
+- Image files: `static/images/`, `static/images/portfolio/`, and `static/images/projects/`
 
 Some SVG files are placeholders; the existing interior photos are JPEG files in `static/images/portfolio/`. Any of these image files can be reused for the hero, services, or portfolio. For future updates, copy photos from your project folders into `static/images/` before referencing them; files on another drive are not included in the repository or deployment.
 
@@ -65,28 +65,20 @@ The active Django site shows configured project images first. An empty `image` v
 
 ## Update Portfolio Images
 
-To switch the entire portfolio on/off, or hide a single project, follow [Website Features and Portfolio Switch](./WEBSITE_FEATURES.md). Existing exterior placeholder projects are disabled until real project images are supplied.
+Each top-level source folder becomes a clickable project with a separate HTML page containing all imported images grouped by room subfolder. Project 1 includes all nine images, not just its former selected cover photos. Empty folders have an explicit coming-soon state. The original `mujeet yelanka` folder is publicly named Project 6.
 
-1. Add photos to `static/images/portfolio/`.
+Follow the [Project Gallery and Import Guide](./PROJECT_GALLERY_GUIDE.md) for the full data format, image inventory, and manual editing instructions. To switch the entire portfolio on/off, or hide a single project, see [Website Features and Portfolio Switch](./WEBSITE_FEATURES.md).
 
-2. Open `content/portfolio.json`.
+For the next batch, add photos under the appropriate project/room folder on your source drive, then run from the repository root in Windows PowerShell:
 
-3. Update an existing entry or add a new object to the JSON array. For example:
+```powershell
+.\scripts\import-project-images.ps1 -SourceRoot 'H:\Rekha_Projects\my projects'
+.\.venv\Scripts\python.exe run_local.py
+```
 
-   ```json
-   {
-     "image": "images/portfolio/whitefield-villa.webp",
-     "category": "bungalow",
-     "category_label": "Bungalow Design",
-     "title": "Whitefield Villa",
-     "location": "Bangalore, Karnataka",
-     "wide": true
-   }
-   ```
+The importer creates optimized repository-owned JPEGs and updates `content/portfolio.json`. It preserves existing project titles, descriptions, visibility switches, room/image titles, and valid cover selections. It does not change originals. Stop the preview with Ctrl+C, build, review, commit, and push using the existing workflow.
 
-Keep commas between objects, but not after the last object. Use one of the existing categories: `bungalow`, `terrace`, `elevation`, `pergola`, `living`, `kitchen`, or `bedroom`. Use `"wide": true` only for strong landscape images. If a location is unknown, use `"location": ""` rather than guessing.
-
-For example, the current living room photo can be referenced from any of the three content files as `images/portfolio/project-3-living.jpg`.
+Previously selected files under `static/images/portfolio/` remain in place because the hero and expertise cards use them. The old flat one-image portfolio format has been replaced by project objects with room/image arrays; do not add flat entries to the new JSON.
 
 ## Preview Changes Locally
 
@@ -121,14 +113,14 @@ Run:
 python build.py
 ```
 
-This deletes and recreates `docs/`, then mirrors `docs/index.html` to the root `index.html`. Back up any changes in those generated files before running the build. `docs/` is ignored by Git; do not keep your original images or content there.
+This deletes and recreates `docs/`, renders all enabled HTML pages and the sitemap, then mirrors generated pages to the repository root for preview. Back up any changes in generated files before running the build. `docs/` and additional root preview pages are ignored by Git; do not keep original images or content there. See [Page Navigation and Animation](./NAVIGATION_AND_ANIMATION_GUIDE.md).
 
 ## Deploy Updates
 
 After checking the site locally:
 
 ```bash
-git add content static/images index.html
+git add content templates static site_app amd_site scripts build.py .gitignore documentation README.md index.html
 git commit -m "Update website images and content"
 git push
 ```

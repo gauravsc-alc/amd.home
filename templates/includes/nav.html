@@ -1,6 +1,6 @@
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" aria-label="Main navigation">
   <div class="nav__inner">
-    <a href="#hero" class="nav__logo">
+    <a href="index.html" class="nav__logo" aria-label="{{ config.full_name }} home">
       <span class="nav__logo-main">AMD</span>
       <span class="nav__logo-sub">{{ config.full_name }}</span>
     </a>
@@ -8,11 +8,9 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
-      <li><a href="#expertise">Services</a></li>
-      {% if config.portfolio.enabled != False %}<li><a href="#portfolio">Portfolio</a></li>{% endif %}
-      <li><a href="#process">Process</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact" class="nav__cta">Get a Quote</a></li>
+{% for item in navigation %}
+      <li><a href="{{ item.filename }}"{% if item.key == current_page %} aria-current="page"{% endif %}{% if item.key == 'contact' %} class="nav__cta"{% endif %}>{{ item.label }}</a></li>
+{% endfor %}
     </ul>
   </div>
   <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>

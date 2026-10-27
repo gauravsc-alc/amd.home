@@ -49,7 +49,7 @@ document.addEventListener('keydown', event => {
 });
 
 const revealItems = document.querySelectorAll(
-  '.section-header, .expertise-card, .portfolio-item, .process-step, .stat, .about__body, .contact__left, .contact__form'
+  '.section-header, .expertise-card, .project-card, .portfolio-item, .home-path, .process-step, .stat, .about__body, .contact__left, .contact__form'
 );
 if ('IntersectionObserver' in window && motionEnabled()) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -66,35 +66,116 @@ if ('IntersectionObserver' in window && motionEnabled()) {
 }
 
 const portfolioItems = [...document.querySelectorAll('.portfolio-item')];
-const filterButtons = [...document.querySelectorAll('.filter-btn')];
-const portfolioStatus = document.getElementById('portfolioStatus');
+const houseScene = document.getElementById('houseScene');
+if (houseScene) {
+  const panels = [...houseScene.querySelectorAll('.concept-panel')];
+  const selectors = document.getElementById('conceptSelectors');
+  const sceneButtons = [...selectors.querySelectorAll('button')];
+  const pauseButton = document.getElementById('pauseHouse');
+  const replayButton = document.getElementById('replayHouse');
+  let sceneIndex = 0;
+  let remaining = 0;
+  let timer = null;
+  let lastStarted = 0;
+  let started = false;
+  let paused = false;
+  let finished = false;
+  let visible = !('IntersectionObserver' in window);
 
-function updatePortfolioStatus() {
-  const count = portfolioItems.filter(item => !item.classList.contains('hidden')).length;
-  if (portfolioStatus) portfolioStatus.textContent = count ? `${count} project renders` : 'New projects are coming soon.';
-  scheduleScrollUpdate();
-}
+  function stopTimer() {
+    if (timer === null) return;
+    clearTimeout(timer);
+    remaining = Math.max(0, remaining - (performance.now() - lastStarted));
+    timer = null;
+  }
 
-filterButtons.forEach(button => {
-  button.setAttribute('aria-pressed', String(button.classList.contains('active')));
-  button.hidden = button.dataset.filter !== 'all' && !portfolioItems.some(item => item.dataset.category === button.dataset.filter);
-  button.addEventListener('click', () => {
-    filterButtons.forEach(filterButton => {
-      const active = filterButton === button;
-      filterButton.classList.toggle('active', active);
-      filterButton.setAttribute('aria-pressed', String(active));
+  function showScene(index, animate) {
+    stopTimer();
+    sceneIndex = index;
+    panels.forEach((panel, panelIndex) => {
+      panel.hidden = panelIndex !== index;
+      panel.classList.remove('is-building', 'is-paused');
+      sceneButtons[panelIndex].setAttribute('aria-pressed', String(panelIndex === index));
     });
-    portfolioItems.forEach(item => {
-      const visible = button.dataset.filter === 'all' || item.dataset.category === button.dataset.filter;
-      item.classList.toggle('hidden', !visible);
-      if (visible && motionEnabled() && typeof item.animate === 'function') {
-        item.animate([{ opacity: 0.25, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 300, easing: 'ease-out' });
+    const active = panels[index];
+    remaining = Number(active.dataset.duration);
+    active.style.setProperty('--scene-duration', `${remaining}ms`);
+    document.getElementById('conceptTitle').textContent = active.dataset.title;
+    document.getElementById('conceptEdition').textContent = `Concept / ${String(index + 1).padStart(2, '0')} of ${String(panels.length).padStart(2, '0')}`;
+    if (animate) {
+      void active.offsetWidth;
+      active.classList.add('is-building');
+    }
+  }
+
+  function syncPlayback() {
+    stopTimer();
+    const enabled = motionEnabled();
+    pauseButton.hidden = !enabled;
+    replayButton.hidden = !enabled;
+    if (!enabled) {
+      panels.forEach(panel => panel.classList.remove('is-building', 'is-paused'));
+      if (started) paused = true;
+      return;
+    }
+    if (!started && visible && !document.hidden) {
+      started = true;
+      showScene(0, true);
+    }
+    const running = started && !paused && !finished && visible && !document.hidden;
+    panels[sceneIndex].classList.toggle('is-paused', !running);
+    pauseButton.textContent = finished ? 'Play again' : paused ? 'Resume' : 'Pause';
+    if (!running) return;
+    lastStarted = performance.now();
+    timer = setTimeout(() => {
+      timer = null;
+      if (sceneIndex === panels.length - 1) {
+        finished = true;
+      } else {
+        showScene(sceneIndex + 1, true);
       }
-    });
-    updatePortfolioStatus();
+      syncPlayback();
+    }, remaining);
+  }
+
+  function replaySequence() {
+    if (!motionEnabled()) return;
+    started = true;
+    paused = false;
+    finished = false;
+    showScene(0, true);
+    syncPlayback();
+  }
+
+  selectors.hidden = false;
+  sceneButtons.forEach((button, index) => button.addEventListener('click', () => {
+    started = true;
+    paused = true;
+    finished = false;
+    showScene(index, false);
+    syncPlayback();
+  }));
+  pauseButton.addEventListener('click', () => {
+    if (finished) return replaySequence();
+    paused = !paused;
+    if (!paused && !panels[sceneIndex].classList.contains('is-building')) showScene(sceneIndex, true);
+    syncPlayback();
   });
-});
-updatePortfolioStatus();
+  replayButton.addEventListener('click', replaySequence);
+  motionPreference.addEventListener('change', syncPlayback);
+  document.addEventListener('visibilitychange', syncPlayback);
+  window.addEventListener('pagehide', stopTimer);
+  window.addEventListener('pageshow', syncPlayback);
+  new MutationObserver(syncPlayback).observe(document.body, { attributes: true, attributeFilter: ['data-animations'] });
+  if ('IntersectionObserver' in window) {
+    const houseObserver = new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.12;
+      syncPlayback();
+    }, { threshold: [0, 0.12] });
+    houseObserver.observe(houseScene);
+  }
+  syncPlayback();
+}
 
 const lightbox = document.getElementById('lightbox');
 if (lightbox) {
@@ -140,7 +221,7 @@ if (lightbox) {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     returnFocus = item;
-    currentItems = portfolioItems.filter(project => !project.classList.contains('hidden'));
+    currentItems = portfolioItems.filter(photo => photo.dataset.project === item.dataset.project);
     currentIndex = currentItems.indexOf(item);
     showSlide(currentIndex);
     previousOverflow = document.body.style.overflow;

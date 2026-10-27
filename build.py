@@ -12,6 +12,8 @@ Usage:
 import os
 import sys
 import shutil
+import json
+import re
 from pathlib import Path
 
 # ── Set build mode BEFORE importing Django ──────────────────
@@ -23,23 +25,24 @@ django.setup()
 
 from django.test import Client             # noqa: E402
 from django.conf import settings           # noqa: E402
+from site_app.pages import get_build_pages
 
-DOCS = Path("docs")
-ROOT_INDEX = Path("index.html")
+PROJECT_ROOT = Path(settings.BASE_DIR).resolve()
+DOCS = PROJECT_ROOT / 'docs'
+ROOT_MANIFEST = PROJECT_ROOT / '.generated-pages.json'
 
 
 def clean():
+    if DOCS.resolve() != PROJECT_ROOT / 'docs':
+        raise ValueError('Build output must be the repository docs directory, not a redirected path')
     print("  Cleaning docs/ ...")
     shutil.rmtree(DOCS, ignore_errors=True)
     DOCS.mkdir()
 
 
-def build_pages():
+def build_pages(pages):
     client = Client()
-    pages = [
-        ("/", "index.html"),
-    ]
-    for url, output in pages:
+    for url, output in pages + [('/sitemap.xml', 'sitemap.xml')]:
         print(f"  GET {url}  ->  docs/{output}")
         response = client.get(url)
         if response.status_code != 200:
@@ -65,21 +68,29 @@ def fix_static_paths():
             print(f"  Fixed static paths in {html_file.name}")
 
 
-def mirror_root_index():
-    """Keep repo-root index.html in sync for simple root-folder previews (e.g. VS Code Live Server)."""
-    built_index = DOCS / "index.html"
-    if built_index.exists():
-        ROOT_INDEX.write_text(built_index.read_text(encoding="utf-8"), encoding="utf-8")
-        print("  Mirrored docs/index.html -> index.html")
+def mirror_root_pages(pages):
+    filenames = {filename for _, filename in pages} | {'sitemap.xml'}
+    previous = json.loads(ROOT_MANIFEST.read_text(encoding='utf-8')) if ROOT_MANIFEST.exists() else []
+    allowed = r'(?:index|services|portfolio|process|about|contact|gallery-[a-z0-9-]+)\.html|sitemap\.xml'
+    for filename in previous:
+        if not isinstance(filename, str) or not re.fullmatch(allowed, filename):
+            raise ValueError('Invalid generated-page manifest entry')
+    for filename in set(previous) - filenames:
+        (PROJECT_ROOT / filename).unlink(missing_ok=True)
+    for filename in filenames:
+        shutil.copyfile(DOCS / filename, PROJECT_ROOT / filename)
+    ROOT_MANIFEST.write_text(json.dumps(sorted(filenames), indent=2) + '\n', encoding='utf-8')
+    print('  Mirrored generated pages to the repository root')
 
 
 def main():
     print("\nBuilding static site ...")
+    pages = get_build_pages()
     clean()
-    build_pages()
+    build_pages(pages)
     copy_static()
     fix_static_paths()
-    mirror_root_index()
+    mirror_root_pages(pages)
     print("\nBuild complete!  Output: docs/\n")
 
 

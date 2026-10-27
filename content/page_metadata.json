@@ -1,0 +1,31 @@
+{
+  "home": {
+    "title": "Interior Design & Architecture",
+    "description": "Discover Ashapura Maison Design: thoughtful interiors, architecture, and room-by-room project galleries."
+  },
+  "services": {
+    "title": "Interior & Architectural Design Services",
+    "heading": "Thoughtful design. Every space.",
+    "description": "Explore our living room, bedroom, modular kitchen, bungalow, terrace, elevation, and pergola design services."
+  },
+  "portfolio": {
+    "title": "Interior Design Projects",
+    "heading": "Step inside our projects.",
+    "description": "Browse our interior design projects, with room-by-room galleries and detailed design renders."
+  },
+  "process": {
+    "title": "Our Design Process",
+    "heading": "From first conversation to coming home.",
+    "description": "Explore our design process, from consultation and concepts through execution and handover."
+  },
+  "about": {
+    "title": "About Our Studio",
+    "heading": "Indian sensibility. Individual stories.",
+    "description": "Meet the design philosophy behind Ashapura Maison Design and our approach to Indian homes."
+  },
+  "contact": {
+    "title": "Contact Our Studio",
+    "heading": "Your next chapter starts here.",
+    "description": "Contact Ashapura Maison Design in Bangalore to discuss your home, requirements, and design enquiry."
+  }
+}

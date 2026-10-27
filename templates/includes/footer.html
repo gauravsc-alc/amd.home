@@ -6,11 +6,9 @@
         <p>{{ config.footer.tagline }}</p>
       </div>
       <nav class="footer__links" aria-label="Footer navigation">
-        <a href="#expertise">Services</a>
-        {% if config.portfolio.enabled != False %}<a href="#portfolio">Portfolio</a>{% endif %}
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+{% for item in navigation %}
+        <a href="{{ item.filename }}"{% if item.key == current_page %} aria-current="page"{% endif %}>{{ item.label }}</a>
+{% endfor %}
       </nav>
       <div class="footer__social" aria-label="Social profiles">
 {% for name, url in config.social.items %}

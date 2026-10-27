@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-heading">
+  <div class="container">
+    <p class="section-eyebrow">{{ page.label }} / Ashapura Maison Design</p>
+    <h1>{{ page.heading }}</h1>
+    <p>{{ seo.description }}</p>
+  </div>
+</header>
+{% if current_page == 'services' %}
+{% include "includes/expertise.html" %}
+{% elif current_page == 'portfolio' %}
+{% include "includes/portfolio.html" %}
+{% elif current_page == 'process' %}
+{% include "includes/process.html" %}
+{% elif current_page == 'about' %}
+{% include "includes/about.html" %}
+{% include "includes/stats.html" %}
+{% elif current_page == 'contact' %}
+{% include "includes/contact.html" %}
+{% endif %}
+{% if current_page != 'contact' %}{% include "includes/next-step.html" %}{% endif %}
+{% endblock %}

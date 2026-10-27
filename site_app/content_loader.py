@@ -32,6 +32,7 @@ def _load_markdown(filename: str) -> str:
 def get_home_context() -> dict:
     return {
         "config":     _load_json("config.json"),
+        "page_content": _load_json("page_metadata.json"),
         "portfolio":  _load_json("portfolio.json"),
         "services":   _load_json("services.json"),
         "process":    _load_json("process.json"),
