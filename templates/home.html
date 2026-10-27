@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-  {% include "includes/hero.html" %}
-  {% include "includes/expertise.html" %}
-  {% include "includes/portfolio.html" %}
-  {% include "includes/lightbox.html" %}
-  {% include "includes/process.html" %}
-  {% include "includes/stats.html" %}
-  {% include "includes/about.html" %}
-  {% include "includes/contact.html" %}
+{% include "includes/hero.html" %}
+{% include "includes/expertise.html" %}
+{% if config.portfolio.enabled != False %}
+{% include "includes/portfolio.html" %}
+{% endif %}
+{% include "includes/process.html" %}
+{% include "includes/stats.html" %}
+{% include "includes/about.html" %}
+{% include "includes/contact.html" %}
+{% endblock %}
+{% block overlays %}
+{% if config.portfolio.enabled != False %}
+{% include "includes/lightbox.html" %}
+{% endif %}
 {% endblock %}

@@ -25,17 +25,19 @@
           </li>
         </ul>
         <div class="contact__social" aria-label="Social profiles">
-          {% for name, url in config.social.items %}
+{% for name, url in config.social.items %}
+{% if url and url != '#' %}
           <a href="{{ url }}" class="social-btn" aria-label="{{ name|title }}" title="{{ name|title }}">
             <i class="fa-brands {% if name == 'twitter' %}fa-x-twitter{% else %}fa-{{ name }}{% endif %}" aria-hidden="true"></i>
             <span class="visually-hidden">{{ name|title }}</span>
           </a>
-          {% endfor %}
+{% endif %}
+{% endfor %}
         </div>
       </div>
 
       <!-- Right: enquiry form -->
-      <form class="contact__form" id="contactForm" novalidate>
+      <form class="contact__form" id="contactForm" data-email="{{ config.contact.email }}">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Your Name *</label>
@@ -54,9 +56,9 @@
           <label for="service">Project Type</label>
           <select id="service" name="service">
             <option value="">— Select a service —</option>
-            {% for svc in services %}
+{% for svc in services %}
             <option>{{ svc.title }}</option>
-            {% endfor %}
+{% endfor %}
             <option>Full Home Interior</option>
           </select>
         </div>
@@ -65,8 +67,9 @@
           <textarea id="message" name="message" rows="4"
             placeholder="Location, approximate area, budget range, timeline..."></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
-        <p class="form-note" id="formNote">{{ config.contact.form_note }}</p>
+        <button type="submit" class="btn btn--primary btn--full" disabled>Prepare Email Enquiry</button>
+        <p class="form-note" id="formNote" role="status">{{ config.contact.form_note }}</p>
+        <noscript><p>JavaScript is required to prepare the email. You can also <a href="mailto:{{ config.contact.email }}">email us directly</a>.</p></noscript>
       </form>
 
     </div>

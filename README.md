@@ -72,6 +72,9 @@ amd.home/
 
 - [Image Update and Deployment Guide](documentation/IMAGE_UPDATE_AND_DEPLOYMENT_GUIDE.md)
 - [GitHub Pages Hosting Guide](documentation/GITHUB_PAGES_HOSTING.md)
+- [Website Features and Portfolio Switch](documentation/WEBSITE_FEATURES.md)
+- [360-degree / VR Setup](documentation/VR_SETUP_GUIDE.md)
+- [Local Ollama Chatbot Plan](documentation/OLLAMA_CHATBOT_GUIDE.md)
 
 ---
 

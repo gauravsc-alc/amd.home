@@ -1,7 +1,7 @@
 {% load static %}
 <section class="hero" id="hero">
   <img src="{% static config.hero.image %}"
-       alt="{{ config.title }}" class="hero__bg" />
+       alt="{{ config.title }} living room design" class="hero__bg" fetchpriority="high" />
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__eyebrow">{{ config.hero.eyebrow }}</p>
@@ -10,8 +10,15 @@
     </h1>
     <p class="hero__sub">{{ config.hero.subtitle }}</p>
     <div class="hero__actions">
-      <a href="#portfolio" class="btn btn--primary">{{ config.hero.cta_primary }}</a>
+{% if config.portfolio.enabled != False %}
+      <a href="#portfolio" class="btn btn--primary">{{ config.hero.cta_primary }} <span aria-hidden="true">&rarr;</span></a>
+{% else %}
+      <a href="#expertise" class="btn btn--primary">Explore Our Expertise <span aria-hidden="true">&rarr;</span></a>
+{% endif %}
       <a href="#contact"   class="btn btn--ghost">{{ config.hero.cta_secondary }}</a>
+{% if config.virtual_tour.enabled and config.virtual_tour.url %}
+      <a href="{{ config.virtual_tour.url }}" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">{{ config.virtual_tour.label }} <span class="visually-hidden">(opens in a new tab)</span><span aria-hidden="true">&nearr;</span></a>
+{% endif %}
     </div>
   </div>
   <div class="hero__scroll-hint" aria-hidden="true">

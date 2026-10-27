@@ -10,18 +10,27 @@
       </p>
     </div>
     <div class="expertise__grid">
-      {% for service in services %}
+{% for service in services|dictsortreversed:"image" %}
       <article class="expertise-card">
+{% if service.image %}
         <div class="expertise-card__img-wrap">
-          <img src="{% static service.image %}" alt="{{ service.title }}" loading="lazy" />
+          <img src="{% static service.image %}" alt="{{ service.title }} project render" loading="lazy" decoding="async" />
+          <span class="expertise-card__badge">Project render</span>
         </div>
+{% else %}
+        <div class="expertise-card__concept">
+          <span class="expertise-card__concept-icon" aria-hidden="true">{{ service.icon|safe }}</span>
+          <span>Exterior design</span>
+          <small>Project images coming soon</small>
+        </div>
+{% endif %}
         <div class="expertise-card__body">
-          <div class="expertise-card__icon">{{ service.icon }}</div>
           <h3>{{ service.title }}</h3>
           <p>{{ service.description }}</p>
+          <a class="expertise-card__link" href="#contact">Discuss {{ service.title|lower }} <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      {% endfor %}
+{% endfor %}
     </div>
   </div>
 </section>

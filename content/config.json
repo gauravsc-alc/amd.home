@@ -11,14 +11,28 @@
     "subtitle":      "Bungalows · Terraces · Elevations · Pergolas · Interiors",
     "cta_primary":   "View Portfolio",
     "cta_secondary": "Get a Quote",
-    "image":         "images/hero.svg"
+    "image":         "images/portfolio/project-3-living.jpg"
+  },
+
+  "portfolio": {
+    "enabled": true
+  },
+
+  "animations": {
+    "enabled": true
+  },
+
+  "virtual_tour": {
+    "enabled": false,
+    "url": "",
+    "label": "Explore in 360 degrees"
   },
 
   "contact": {
     "phone":     "+91 9035 116 542",
     "email":     "hello@amdhomeinteriors.com",
     "location":  "Bangalore, Karnataka",
-    "form_note": "We reply within 24 hours."
+    "form_note": "Prepare an email enquiry. Review and send it in your email app."
   },
 
   "social": {

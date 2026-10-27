@@ -4,15 +4,16 @@
       <span class="nav__logo-main">AMD</span>
       <span class="nav__logo-sub">{{ config.full_name }}</span>
     </a>
-    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
       <li><a href="#expertise">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      {% if config.portfolio.enabled != False %}<li><a href="#portfolio">Portfolio</a></li>{% endif %}
       <li><a href="#process">Process</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact" class="nav__cta">Get a Quote</a></li>
     </ul>
   </div>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 </nav>

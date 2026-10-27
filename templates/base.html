@@ -11,13 +11,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
-<body>
+<body data-animations="{% if config.animations.enabled != False %}true{% else %}false{% endif %}">
+  <a class="skip-link" href="#mainContent">Skip to content</a>
 
-  {% include "includes/nav.html" %}
+{% include "includes/nav.html" %}
 
-  {% block content %}{% endblock %}
+  <main id="mainContent" tabindex="-1">
+{% block content %}{% endblock %}
+  </main>
 
-  {% include "includes/footer.html" %}
+{% include "includes/footer.html" %}
+{% block overlays %}{% endblock %}
+  <a class="back-to-top" id="backToTop" href="#hero" aria-label="Back to top" hidden>&uarr;</a>
 
   <script src="{% static 'js/main.js' %}"></script>
 </body>

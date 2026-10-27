@@ -1,6 +1,7 @@
 [
   {
     "image":          "images/portfolio/bungalow-1.svg",
+    "enabled":        false,
     "category":       "bungalow",
     "category_label": "Bungalow Design",
     "title":          "Project Name",
@@ -9,6 +10,7 @@
   },
   {
     "image":          "images/portfolio/bungalow-2.svg",
+    "enabled":        false,
     "category":       "bungalow",
     "category_label": "Bungalow Design",
     "title":          "Project Name",
@@ -17,6 +19,7 @@
   },
   {
     "image":          "images/portfolio/bungalow-3.svg",
+    "enabled":        false,
     "category":       "bungalow",
     "category_label": "Bungalow Design",
     "title":          "Project Name",
@@ -25,6 +28,7 @@
   },
   {
     "image":          "images/portfolio/terrace-1.svg",
+    "enabled":        false,
     "category":       "terrace",
     "category_label": "Terrace Design",
     "title":          "Project Name",
@@ -33,6 +37,7 @@
   },
   {
     "image":          "images/portfolio/terrace-2.svg",
+    "enabled":        false,
     "category":       "terrace",
     "category_label": "Terrace Design",
     "title":          "Project Name",
@@ -41,6 +46,7 @@
   },
   {
     "image":          "images/portfolio/elevation-1.svg",
+    "enabled":        false,
     "category":       "elevation",
     "category_label": "Building Elevation",
     "title":          "Project Name",
@@ -49,6 +55,7 @@
   },
   {
     "image":          "images/portfolio/elevation-2.svg",
+    "enabled":        false,
     "category":       "elevation",
     "category_label": "Building Elevation",
     "title":          "Project Name",
@@ -57,6 +64,7 @@
   },
   {
     "image":          "images/portfolio/pergola-1.svg",
+    "enabled":        false,
     "category":       "pergola",
     "category_label": "Pergola Design",
     "title":          "Project Name",
@@ -65,6 +73,7 @@
   },
   {
     "image":          "images/portfolio/pergola-2.svg",
+    "enabled":        false,
     "category":       "pergola",
     "category_label": "Pergola Design",
     "title":          "Project Name",
@@ -72,51 +81,99 @@
     "wide":           false
   },
   {
-    "image":          "images/portfolio/living-1.svg",
+    "image":          "images/portfolio/project-3-living.jpg",
     "category":       "living",
     "category_label": "Living Room",
-    "title":          "Project Name",
-    "location":       "Location, City",
+    "title":          "Project 3 - Living Room",
+    "location":       "",
     "wide":           true
   },
   {
-    "image":          "images/portfolio/living-2.svg",
+    "image":          "images/portfolio/project-1-living.jpg",
     "category":       "living",
     "category_label": "Living Room",
-    "title":          "Project Name",
-    "location":       "Location, City",
+    "title":          "Project 1 - Living Room",
+    "location":       "",
     "wide":           false
   },
   {
-    "image":          "images/portfolio/kitchen-1.svg",
+    "image":          "images/portfolio/project-2-kitchen.jpg",
     "category":       "kitchen",
     "category_label": "Modular Kitchen",
-    "title":          "Project Name",
-    "location":       "Location, City",
+    "title":          "Project 2 - Kitchen",
+    "location":       "",
     "wide":           false
   },
   {
-    "image":          "images/portfolio/kitchen-2.svg",
+    "image":          "images/portfolio/project-3-kitchen.jpg",
     "category":       "kitchen",
     "category_label": "Modular Kitchen",
-    "title":          "Project Name",
-    "location":       "Location, City",
+    "title":          "Project 3 - Kitchen",
+    "location":       "",
     "wide":           false
   },
   {
-    "image":          "images/portfolio/bedroom-1.svg",
+    "image":          "images/portfolio/project-1-bedroom.jpg",
     "category":       "bedroom",
     "category_label": "Bedroom",
-    "title":          "Project Name",
-    "location":       "Location, City",
+    "title":          "Project 1 - Bedroom",
+    "location":       "",
     "wide":           true
   },
   {
-    "image":          "images/portfolio/bedroom-2.svg",
+    "image":          "images/portfolio/yelanka-kids-bedroom.jpg",
     "category":       "bedroom",
     "category_label": "Bedroom",
-    "title":          "Project Name",
-    "location":       "Location, City",
+    "title":          "Kids' Bedroom",
+    "location":       "",
+    "wide":           false
+  },
+  {
+    "image":          "images/portfolio/project-2-living.jpg",
+    "category":       "living",
+    "category_label": "Living Room",
+    "title":          "Project 2 - Living Room",
+    "location":       "",
+    "wide":           true
+  },
+  {
+    "image":          "images/portfolio/project-4-living.jpg",
+    "category":       "living",
+    "category_label": "Living Room",
+    "title":          "Project 4 - Living Room",
+    "location":       "",
+    "wide":           true
+  },
+  {
+    "image":          "images/portfolio/project-1-kitchen.jpg",
+    "category":       "kitchen",
+    "category_label": "Modular Kitchen",
+    "title":          "Project 1 - Kitchen",
+    "location":       "",
+    "wide":           false
+  },
+  {
+    "image":          "images/portfolio/project-4-kitchen.jpg",
+    "category":       "kitchen",
+    "category_label": "Modular Kitchen",
+    "title":          "Project 4 - Kitchen",
+    "location":       "",
+    "wide":           true
+  },
+  {
+    "image":          "images/portfolio/project-2-bedroom.jpg",
+    "category":       "bedroom",
+    "category_label": "Bedroom",
+    "title":          "Project 2 - Bedroom",
+    "location":       "",
+    "wide":           true
+  },
+  {
+    "image":          "images/portfolio/project-3-bedroom.jpg",
+    "category":       "bedroom",
+    "category_label": "Bedroom",
+    "title":          "Project 3 - Kids' Bedroom",
+    "location":       "",
     "wide":           false
   }
 ]

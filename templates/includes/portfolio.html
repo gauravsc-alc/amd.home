@@ -5,13 +5,13 @@
       <p class="section-eyebrow">Featured Work</p>
       <h2 class="section-title">Portfolio</h2>
       <p class="section-desc">
-        A selection of completed and upcoming projects.
+        Explore our interior design concepts and project renders.
         Click any image to view full size.
       </p>
     </div>
 
     <!-- Filter tabs — categories come from content/portfolio.json -->
-    <div class="portfolio__filters" role="tablist">
+    <div class="portfolio__filters" role="group" aria-label="Filter projects by service">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="bungalow">Bungalow</button>
       <button class="filter-btn" data-filter="terrace">Terrace</button>
@@ -24,21 +24,25 @@
 
     <!-- Grid — looped from content/portfolio.json -->
     <div class="portfolio__grid" id="portfolioGrid">
-      {% for item in portfolio %}
-      <div class="portfolio-item{% if item.wide %} portfolio-item--wide{% endif %}"
-           data-category="{{ item.category }}">
+{% for item in portfolio %}
+{% if item.enabled != False %}
+      <a class="portfolio-item{% if item.wide %} portfolio-item--wide{% endif %}"
+         href="{% static item.image %}" data-category="{{ item.category }}"
+         aria-label="View {{ item.title }}: {{ item.category_label }}">
         <div class="portfolio-item__img-wrap">
           <img src="{% static item.image %}"
                alt="{{ item.title }} — {{ item.category_label }}"
-               loading="lazy" />
+               loading="lazy" decoding="async" />
           <div class="portfolio-item__overlay">
             <p class="portfolio-item__cat">{{ item.category_label }}</p>
             <h3 class="portfolio-item__title">{{ item.title }}</h3>
             <p class="portfolio-item__loc">{{ item.location }}</p>
           </div>
         </div>
-      </div>
-      {% endfor %}
+      </a>
+{% endif %}
+{% endfor %}
     </div>
+    <p class="portfolio__status" id="portfolioStatus" role="status" aria-live="polite"></p>
   </div>
 </section>

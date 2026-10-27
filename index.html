@@ -11,15 +11,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="static/css/style.css" />
 </head>
-<body>
+<body data-animations="true">
+  <a class="skip-link" href="#mainContent">Skip to content</a>
 
-  <nav class="nav" id="nav">
+<nav class="nav" id="nav">
   <div class="nav__inner">
     <a href="#hero" class="nav__logo">
       <span class="nav__logo-main">AMD</span>
       <span class="nav__logo-sub">Ashapura Maison Design</span>
     </a>
-    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
@@ -30,14 +31,16 @@
       <li><a href="#contact" class="nav__cta">Get a Quote</a></li>
     </ul>
   </div>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 </nav>
 
 
-  
-  
+  <main id="mainContent" tabindex="-1">
+
+
 <section class="hero" id="hero">
-  <img src="static/images/hero.svg"
-       alt="Ashapura Maison Design" class="hero__bg" />
+  <img src="static/images/portfolio/project-3-living.jpg"
+       alt="Ashapura Maison Design living room design" class="hero__bg" fetchpriority="high" />
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__eyebrow">Interior Design &amp; Architecture</p>
@@ -46,8 +49,11 @@
     </h1>
     <p class="hero__sub">Bungalows · Terraces · Elevations · Pergolas · Interiors</p>
     <div class="hero__actions">
-      <a href="#portfolio" class="btn btn--primary">View Portfolio</a>
+
+      <a href="#portfolio" class="btn btn--primary">View Portfolio <span aria-hidden="true">&rarr;</span></a>
+
       <a href="#contact"   class="btn btn--ghost">Get a Quote</a>
+
     </div>
   </div>
   <div class="hero__scroll-hint" aria-hidden="true">
@@ -56,7 +62,7 @@
   </div>
 </section>
 
-  
+
 <section class="expertise section" id="expertise">
   <div class="container">
     <div class="section-header">
@@ -68,102 +74,128 @@
       </p>
     </div>
     <div class="expertise__grid">
-      
+
       <article class="expertise-card">
+
         <div class="expertise-card__img-wrap">
-          <img src="static/images/expertise-bungalow.svg" alt="Bungalow Design" loading="lazy" />
+          <img src="static/images/portfolio/project-3-living.jpg" alt="Living Room project render" loading="lazy" decoding="async" />
+          <span class="expertise-card__badge">Project render</span>
         </div>
+
         <div class="expertise-card__body">
-          <div class="expertise-card__icon">&amp;#127968;</div>
-          <h3>Bungalow Design</h3>
-          <p>Complete design solutions for independent bungalows — spatial planning, materials selection, finishes, and integrated landscaping.</p>
-        </div>
-      </article>
-      
-      <article class="expertise-card">
-        <div class="expertise-card__img-wrap">
-          <img src="static/images/expertise-terrace.svg" alt="Terrace Design" loading="lazy" />
-        </div>
-        <div class="expertise-card__body">
-          <div class="expertise-card__icon">&amp;#127796;</div>
-          <h3>Terrace Design</h3>
-          <p>Transform rooftop terraces into living gardens — pergolas, seating zones, planters, lighting, and weather-proof finishes.</p>
-        </div>
-      </article>
-      
-      <article class="expertise-card">
-        <div class="expertise-card__img-wrap">
-          <img src="static/images/expertise-elevation.svg" alt="Building Elevation" loading="lazy" />
-        </div>
-        <div class="expertise-card__body">
-          <div class="expertise-card__icon">&amp;#127959;</div>
-          <h3>Building Elevation</h3>
-          <p>Exterior facades that make a statement — cladding, texture paint, stone work, window framing, and compound walls.</p>
-        </div>
-      </article>
-      
-      <article class="expertise-card">
-        <div class="expertise-card__img-wrap">
-          <img src="static/images/expertise-pergola.svg" alt="Pergola Design" loading="lazy" />
-        </div>
-        <div class="expertise-card__body">
-          <div class="expertise-card__icon">&amp;#9729;</div>
-          <h3>Pergola Design</h3>
-          <p>Elegant pergola structures for gardens, terraces, and poolside — timber, metal, and PVC profiles with climbing plants.</p>
-        </div>
-      </article>
-      
-      <article class="expertise-card">
-        <div class="expertise-card__img-wrap">
-          <img src="static/images/expertise-living.svg" alt="Living Room" loading="lazy" />
-        </div>
-        <div class="expertise-card__body">
-          <div class="expertise-card__icon">&amp;#128250;</div>
           <h3>Living Room</h3>
           <p>Curated living spaces — furniture layouts, feature walls, false ceilings, lighting design, and bespoke joinery.</p>
+          <a class="expertise-card__link" href="#contact">Discuss living room <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      
+
       <article class="expertise-card">
+
         <div class="expertise-card__img-wrap">
-          <img src="static/images/expertise-kitchen.svg" alt="Modular Kitchen" loading="lazy" />
+          <img src="static/images/portfolio/project-2-kitchen.jpg" alt="Modular Kitchen project render" loading="lazy" decoding="async" />
+          <span class="expertise-card__badge">Project render</span>
         </div>
+
         <div class="expertise-card__body">
-          <div class="expertise-card__icon">&amp;#127859;</div>
           <h3>Modular Kitchen</h3>
           <p>Efficient Indian kitchens — modular cabinets, smart storage, premium finishes, and seamless appliance integration.</p>
+          <a class="expertise-card__link" href="#contact">Discuss modular kitchen <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      
+
       <article class="expertise-card">
+
         <div class="expertise-card__img-wrap">
-          <img src="static/images/expertise-bedroom.svg" alt="Bedroom" loading="lazy" />
+          <img src="static/images/portfolio/project-1-bedroom.jpg" alt="Bedroom project render" loading="lazy" decoding="async" />
+          <span class="expertise-card__badge">Project render</span>
         </div>
+
         <div class="expertise-card__body">
-          <div class="expertise-card__icon">&amp;#128716;</div>
           <h3>Bedroom</h3>
           <p>Serene, functional bedrooms — wardrobes, upholstered headboards, lighting layers, and cohesive colour palettes.</p>
+          <a class="expertise-card__link" href="#contact">Discuss bedroom <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      
+
+      <article class="expertise-card">
+
+        <div class="expertise-card__concept">
+          <span class="expertise-card__concept-icon" aria-hidden="true">&#127968;</span>
+          <span>Exterior design</span>
+          <small>Project images coming soon</small>
+        </div>
+
+        <div class="expertise-card__body">
+          <h3>Bungalow Design</h3>
+          <p>Complete design solutions for independent bungalows — spatial planning, materials selection, finishes, and integrated landscaping.</p>
+          <a class="expertise-card__link" href="#contact">Discuss bungalow design <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="expertise-card">
+
+        <div class="expertise-card__concept">
+          <span class="expertise-card__concept-icon" aria-hidden="true">&#127796;</span>
+          <span>Exterior design</span>
+          <small>Project images coming soon</small>
+        </div>
+
+        <div class="expertise-card__body">
+          <h3>Terrace Design</h3>
+          <p>Transform rooftop terraces into living gardens — pergolas, seating zones, planters, lighting, and weather-proof finishes.</p>
+          <a class="expertise-card__link" href="#contact">Discuss terrace design <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="expertise-card">
+
+        <div class="expertise-card__concept">
+          <span class="expertise-card__concept-icon" aria-hidden="true">&#127959;</span>
+          <span>Exterior design</span>
+          <small>Project images coming soon</small>
+        </div>
+
+        <div class="expertise-card__body">
+          <h3>Building Elevation</h3>
+          <p>Exterior facades that make a statement — cladding, texture paint, stone work, window framing, and compound walls.</p>
+          <a class="expertise-card__link" href="#contact">Discuss building elevation <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="expertise-card">
+
+        <div class="expertise-card__concept">
+          <span class="expertise-card__concept-icon" aria-hidden="true">&#9729;</span>
+          <span>Exterior design</span>
+          <small>Project images coming soon</small>
+        </div>
+
+        <div class="expertise-card__body">
+          <h3>Pergola Design</h3>
+          <p>Elegant pergola structures for gardens, terraces, and poolside — timber, metal, and PVC profiles with climbing plants.</p>
+          <a class="expertise-card__link" href="#contact">Discuss pergola design <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-  
+
+
 <section class="portfolio section section--warm" id="portfolio">
   <div class="container">
     <div class="section-header">
       <p class="section-eyebrow">Featured Work</p>
       <h2 class="section-title">Portfolio</h2>
       <p class="section-desc">
-        A selection of completed and upcoming projects.
+        Explore our interior design concepts and project renders.
         Click any image to view full size.
       </p>
     </div>
 
     <!-- Filter tabs — categories come from content/portfolio.json -->
-    <div class="portfolio__filters" role="tablist">
+    <div class="portfolio__filters" role="group" aria-label="Filter projects by service">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="bungalow">Bungalow</button>
       <button class="filter-btn" data-filter="terrace">Terrace</button>
@@ -176,233 +208,236 @@
 
     <!-- Grid — looped from content/portfolio.json -->
     <div class="portfolio__grid" id="portfolioGrid">
-      
-      <div class="portfolio-item"
-           data-category="bungalow">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <a class="portfolio-item portfolio-item--wide"
+         href="static/images/portfolio/project-3-living.jpg" data-category="living"
+         aria-label="View Project 3 - Living Room: Living Room">
         <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/bungalow-1.svg"
-               alt="Project Name — Bungalow Design"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Bungalow Design</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item portfolio-item--wide"
-           data-category="bungalow">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/bungalow-2.svg"
-               alt="Project Name — Bungalow Design"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Bungalow Design</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="bungalow">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/bungalow-3.svg"
-               alt="Project Name — Bungalow Design"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Bungalow Design</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item portfolio-item--wide"
-           data-category="terrace">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/terrace-1.svg"
-               alt="Project Name — Terrace Design"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Terrace Design</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="terrace">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/terrace-2.svg"
-               alt="Project Name — Terrace Design"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Terrace Design</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="elevation">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/elevation-1.svg"
-               alt="Project Name — Building Elevation"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Building Elevation</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item portfolio-item--wide"
-           data-category="elevation">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/elevation-2.svg"
-               alt="Project Name — Building Elevation"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Building Elevation</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="pergola">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/pergola-1.svg"
-               alt="Project Name — Pergola Design"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Pergola Design</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="pergola">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/pergola-2.svg"
-               alt="Project Name — Pergola Design"
-               loading="lazy" />
-          <div class="portfolio-item__overlay">
-            <p class="portfolio-item__cat">Pergola Design</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-item portfolio-item--wide"
-           data-category="living">
-        <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/living-1.svg"
-               alt="Project Name — Living Room"
-               loading="lazy" />
+          <img src="static/images/portfolio/project-3-living.jpg"
+               alt="Project 3 - Living Room — Living Room"
+               loading="lazy" decoding="async" />
           <div class="portfolio-item__overlay">
             <p class="portfolio-item__cat">Living Room</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
+            <h3 class="portfolio-item__title">Project 3 - Living Room</h3>
+            <p class="portfolio-item__loc"></p>
           </div>
         </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="living">
+      </a>
+
+
+
+      <a class="portfolio-item"
+         href="static/images/portfolio/project-1-living.jpg" data-category="living"
+         aria-label="View Project 1 - Living Room: Living Room">
         <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/living-2.svg"
-               alt="Project Name — Living Room"
-               loading="lazy" />
+          <img src="static/images/portfolio/project-1-living.jpg"
+               alt="Project 1 - Living Room — Living Room"
+               loading="lazy" decoding="async" />
           <div class="portfolio-item__overlay">
             <p class="portfolio-item__cat">Living Room</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
+            <h3 class="portfolio-item__title">Project 1 - Living Room</h3>
+            <p class="portfolio-item__loc"></p>
           </div>
         </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="kitchen">
+      </a>
+
+
+
+      <a class="portfolio-item"
+         href="static/images/portfolio/project-2-kitchen.jpg" data-category="kitchen"
+         aria-label="View Project 2 - Kitchen: Modular Kitchen">
         <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/kitchen-1.svg"
-               alt="Project Name — Modular Kitchen"
-               loading="lazy" />
+          <img src="static/images/portfolio/project-2-kitchen.jpg"
+               alt="Project 2 - Kitchen — Modular Kitchen"
+               loading="lazy" decoding="async" />
           <div class="portfolio-item__overlay">
             <p class="portfolio-item__cat">Modular Kitchen</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
+            <h3 class="portfolio-item__title">Project 2 - Kitchen</h3>
+            <p class="portfolio-item__loc"></p>
           </div>
         </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="kitchen">
+      </a>
+
+
+
+      <a class="portfolio-item"
+         href="static/images/portfolio/project-3-kitchen.jpg" data-category="kitchen"
+         aria-label="View Project 3 - Kitchen: Modular Kitchen">
         <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/kitchen-2.svg"
-               alt="Project Name — Modular Kitchen"
-               loading="lazy" />
+          <img src="static/images/portfolio/project-3-kitchen.jpg"
+               alt="Project 3 - Kitchen — Modular Kitchen"
+               loading="lazy" decoding="async" />
           <div class="portfolio-item__overlay">
             <p class="portfolio-item__cat">Modular Kitchen</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
+            <h3 class="portfolio-item__title">Project 3 - Kitchen</h3>
+            <p class="portfolio-item__loc"></p>
           </div>
         </div>
-      </div>
-      
-      <div class="portfolio-item portfolio-item--wide"
-           data-category="bedroom">
+      </a>
+
+
+
+      <a class="portfolio-item portfolio-item--wide"
+         href="static/images/portfolio/project-1-bedroom.jpg" data-category="bedroom"
+         aria-label="View Project 1 - Bedroom: Bedroom">
         <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/bedroom-1.svg"
-               alt="Project Name — Bedroom"
-               loading="lazy" />
+          <img src="static/images/portfolio/project-1-bedroom.jpg"
+               alt="Project 1 - Bedroom — Bedroom"
+               loading="lazy" decoding="async" />
           <div class="portfolio-item__overlay">
             <p class="portfolio-item__cat">Bedroom</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
+            <h3 class="portfolio-item__title">Project 1 - Bedroom</h3>
+            <p class="portfolio-item__loc"></p>
           </div>
         </div>
-      </div>
-      
-      <div class="portfolio-item"
-           data-category="bedroom">
+      </a>
+
+
+
+      <a class="portfolio-item"
+         href="static/images/portfolio/yelanka-kids-bedroom.jpg" data-category="bedroom"
+         aria-label="View Kids&#x27; Bedroom: Bedroom">
         <div class="portfolio-item__img-wrap">
-          <img src="static/images/portfolio/bedroom-2.svg"
-               alt="Project Name — Bedroom"
-               loading="lazy" />
+          <img src="static/images/portfolio/yelanka-kids-bedroom.jpg"
+               alt="Kids&#x27; Bedroom — Bedroom"
+               loading="lazy" decoding="async" />
           <div class="portfolio-item__overlay">
             <p class="portfolio-item__cat">Bedroom</p>
-            <h3 class="portfolio-item__title">Project Name</h3>
-            <p class="portfolio-item__loc">Location, City</p>
+            <h3 class="portfolio-item__title">Kids&#x27; Bedroom</h3>
+            <p class="portfolio-item__loc"></p>
           </div>
         </div>
-      </div>
-      
+      </a>
+
+
+
+      <a class="portfolio-item portfolio-item--wide"
+         href="static/images/portfolio/project-2-living.jpg" data-category="living"
+         aria-label="View Project 2 - Living Room: Living Room">
+        <div class="portfolio-item__img-wrap">
+          <img src="static/images/portfolio/project-2-living.jpg"
+               alt="Project 2 - Living Room — Living Room"
+               loading="lazy" decoding="async" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Living Room</p>
+            <h3 class="portfolio-item__title">Project 2 - Living Room</h3>
+            <p class="portfolio-item__loc"></p>
+          </div>
+        </div>
+      </a>
+
+
+
+      <a class="portfolio-item portfolio-item--wide"
+         href="static/images/portfolio/project-4-living.jpg" data-category="living"
+         aria-label="View Project 4 - Living Room: Living Room">
+        <div class="portfolio-item__img-wrap">
+          <img src="static/images/portfolio/project-4-living.jpg"
+               alt="Project 4 - Living Room — Living Room"
+               loading="lazy" decoding="async" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Living Room</p>
+            <h3 class="portfolio-item__title">Project 4 - Living Room</h3>
+            <p class="portfolio-item__loc"></p>
+          </div>
+        </div>
+      </a>
+
+
+
+      <a class="portfolio-item"
+         href="static/images/portfolio/project-1-kitchen.jpg" data-category="kitchen"
+         aria-label="View Project 1 - Kitchen: Modular Kitchen">
+        <div class="portfolio-item__img-wrap">
+          <img src="static/images/portfolio/project-1-kitchen.jpg"
+               alt="Project 1 - Kitchen — Modular Kitchen"
+               loading="lazy" decoding="async" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Modular Kitchen</p>
+            <h3 class="portfolio-item__title">Project 1 - Kitchen</h3>
+            <p class="portfolio-item__loc"></p>
+          </div>
+        </div>
+      </a>
+
+
+
+      <a class="portfolio-item portfolio-item--wide"
+         href="static/images/portfolio/project-4-kitchen.jpg" data-category="kitchen"
+         aria-label="View Project 4 - Kitchen: Modular Kitchen">
+        <div class="portfolio-item__img-wrap">
+          <img src="static/images/portfolio/project-4-kitchen.jpg"
+               alt="Project 4 - Kitchen — Modular Kitchen"
+               loading="lazy" decoding="async" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Modular Kitchen</p>
+            <h3 class="portfolio-item__title">Project 4 - Kitchen</h3>
+            <p class="portfolio-item__loc"></p>
+          </div>
+        </div>
+      </a>
+
+
+
+      <a class="portfolio-item portfolio-item--wide"
+         href="static/images/portfolio/project-2-bedroom.jpg" data-category="bedroom"
+         aria-label="View Project 2 - Bedroom: Bedroom">
+        <div class="portfolio-item__img-wrap">
+          <img src="static/images/portfolio/project-2-bedroom.jpg"
+               alt="Project 2 - Bedroom — Bedroom"
+               loading="lazy" decoding="async" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Bedroom</p>
+            <h3 class="portfolio-item__title">Project 2 - Bedroom</h3>
+            <p class="portfolio-item__loc"></p>
+          </div>
+        </div>
+      </a>
+
+
+
+      <a class="portfolio-item"
+         href="static/images/portfolio/project-3-bedroom.jpg" data-category="bedroom"
+         aria-label="View Project 3 - Kids&#x27; Bedroom: Bedroom">
+        <div class="portfolio-item__img-wrap">
+          <img src="static/images/portfolio/project-3-bedroom.jpg"
+               alt="Project 3 - Kids&#x27; Bedroom — Bedroom"
+               loading="lazy" decoding="async" />
+          <div class="portfolio-item__overlay">
+            <p class="portfolio-item__cat">Bedroom</p>
+            <h3 class="portfolio-item__title">Project 3 - Kids&#x27; Bedroom</h3>
+            <p class="portfolio-item__loc"></p>
+          </div>
+        </div>
+      </a>
+
+
     </div>
+    <p class="portfolio__status" id="portfolioStatus" role="status" aria-live="polite"></p>
   </div>
 </section>
 
-  <!-- Lightbox — opened by static/js/main.js when a portfolio item is clicked -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
-  <button class="lightbox__prev"  id="lightboxPrev"  aria-label="Previous">&#8592;</button>
-  <button class="lightbox__next"  id="lightboxNext"  aria-label="Next">&#8594;</button>
-  <div class="lightbox__inner">
-    <img id="lightboxImg" src="" alt="" />
-    <p  id="lightboxCaption" class="lightbox__caption"></p>
-  </div>
-</div>
 
-  <section class="process section" id="process">
+<section class="process section" id="process">
   <div class="container">
     <div class="section-header">
       <p class="section-eyebrow">How We Work</p>
@@ -456,7 +491,7 @@
   </div>
 </section>
 
-  <div class="stats-band">
+<div class="stats-band">
   <div class="container">
     <div class="stats-band__grid">
       
@@ -484,7 +519,7 @@
   </div>
 </div>
 
-  <!-- About section — content from content/pages/home.md -->
+<!-- About section — content from content/pages/home.md -->
 <section class="about section" id="about">
   <div class="container">
     <div class="about__inner">
@@ -513,7 +548,7 @@
   </div>
 </section>
 
-  <section class="contact section section--warm" id="contact">
+<section class="contact section section--warm" id="contact">
   <div class="container">
     <div class="contact__inner">
 
@@ -540,82 +575,40 @@
           </li>
         </ul>
         <div class="contact__social" aria-label="Social profiles">
-          
-          <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            <span class="visually-hidden">Instagram</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Whatsapp" title="Whatsapp">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-            <span class="visually-hidden">Whatsapp</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">
-            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-            <span class="visually-hidden">Facebook</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Linkedin" title="Linkedin">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            <span class="visually-hidden">Linkedin</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Twitter" title="Twitter">
-            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-            <span class="visually-hidden">Twitter</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Pinterest" title="Pinterest">
-            <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
-            <span class="visually-hidden">Pinterest</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Youtube" title="Youtube">
-            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-            <span class="visually-hidden">Youtube</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Telegram" title="Telegram">
-            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
-            <span class="visually-hidden">Telegram</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Tiktok" title="Tiktok">
-            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-            <span class="visually-hidden">Tiktok</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Snapchat" title="Snapchat">
-            <i class="fa-brands fa-snapchat" aria-hidden="true"></i>
-            <span class="visually-hidden">Snapchat</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Reddit" title="Reddit">
-            <i class="fa-brands fa-reddit" aria-hidden="true"></i>
-            <span class="visually-hidden">Reddit</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Medium" title="Medium">
-            <i class="fa-brands fa-medium" aria-hidden="true"></i>
-            <span class="visually-hidden">Medium</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Github" title="Github">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-            <span class="visually-hidden">Github</span>
-          </a>
-          
-          <a href="#" class="social-btn" aria-label="Behance" title="Behance">
-            <i class="fa-brands fa-behance" aria-hidden="true"></i>
-            <span class="visually-hidden">Behance</span>
-          </a>
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
       </div>
 
       <!-- Right: enquiry form -->
-      <form class="contact__form" id="contactForm" novalidate>
+      <form class="contact__form" id="contactForm" data-email="hello@amdhomeinteriors.com">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Your Name *</label>
@@ -634,21 +627,21 @@
           <label for="service">Project Type</label>
           <select id="service" name="service">
             <option value="">— Select a service —</option>
-            
+
             <option>Bungalow Design</option>
-            
+
             <option>Terrace Design</option>
-            
+
             <option>Building Elevation</option>
-            
+
             <option>Pergola Design</option>
-            
+
             <option>Living Room</option>
-            
+
             <option>Modular Kitchen</option>
-            
+
             <option>Bedroom</option>
-            
+
             <option>Full Home Interior</option>
           </select>
         </div>
@@ -657,8 +650,9 @@
           <textarea id="message" name="message" rows="4"
             placeholder="Location, approximate area, budget range, timeline..."></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
-        <p class="form-note" id="formNote">We reply within 24 hours.</p>
+        <button type="submit" class="btn btn--primary btn--full" disabled>Prepare Email Enquiry</button>
+        <p class="form-note" id="formNote" role="status">Prepare an email enquiry. Review and send it in your email app.</p>
+        <noscript><p>JavaScript is required to prepare the email. You can also <a href="mailto:hello@amdhomeinteriors.com">email us directly</a>.</p></noscript>
       </form>
 
     </div>
@@ -666,8 +660,9 @@
 </section>
 
 
+  </main>
 
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="footer__inner">
       <div class="footer__brand">
@@ -682,83 +677,57 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer__social" aria-label="Social profiles">
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Instagram" title="Instagram">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          <span class="visually-hidden">Instagram</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Whatsapp" title="Whatsapp">
-          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-          <span class="visually-hidden">Whatsapp</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Facebook" title="Facebook">
-          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-          <span class="visually-hidden">Facebook</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Linkedin" title="Linkedin">
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          <span class="visually-hidden">Linkedin</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Twitter" title="Twitter">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-          <span class="visually-hidden">Twitter</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Pinterest" title="Pinterest">
-          <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
-          <span class="visually-hidden">Pinterest</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Youtube" title="Youtube">
-          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-          <span class="visually-hidden">Youtube</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Telegram" title="Telegram">
-          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
-          <span class="visually-hidden">Telegram</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Tiktok" title="Tiktok">
-          <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-          <span class="visually-hidden">Tiktok</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Snapchat" title="Snapchat">
-          <i class="fa-brands fa-snapchat" aria-hidden="true"></i>
-          <span class="visually-hidden">Snapchat</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Reddit" title="Reddit">
-          <i class="fa-brands fa-reddit" aria-hidden="true"></i>
-          <span class="visually-hidden">Reddit</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Medium" title="Medium">
-          <i class="fa-brands fa-medium" aria-hidden="true"></i>
-          <span class="visually-hidden">Medium</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Github" title="Github">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-          <span class="visually-hidden">Github</span>
-        </a>
-        
-        <a href="#" class="social-btn social-btn--footer" aria-label="Behance" title="Behance">
-          <i class="fa-brands fa-behance" aria-hidden="true"></i>
-          <span class="visually-hidden">Behance</span>
-        </a>
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <p class="footer__copy">&copy; 2025 Ashapura Maison Design. All rights reserved.</p>
   </div>
 </footer>
 
+
+
+<!-- Lightbox — opened by static/js/main.js when a portfolio item is clicked -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true" tabindex="-1">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox__prev"  id="lightboxPrev"  aria-label="Previous">&#8592;</button>
+  <button class="lightbox__next"  id="lightboxNext"  aria-label="Next">&#8594;</button>
+  <div class="lightbox__inner">
+    <img id="lightboxImg" alt="" />
+    <p id="lightboxCaption" class="lightbox__caption" aria-live="polite"></p>
+  </div>
+</div>
+
+
+
+  <a class="back-to-top" id="backToTop" href="#hero" aria-label="Back to top" hidden>&uarr;</a>
 
   <script src="static/js/main.js"></script>
 </body>
