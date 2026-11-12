@@ -16,6 +16,8 @@ Open the same root and start a fresh task. [CLAUDE.md](../CLAUDE.md) points to t
 
 A website chat or API call does not automatically read your local repository. Supply only the relevant, approved text as context, or explicitly equip your agent with controlled repository read tools. Do not attach the entire private project folder. Use the same task prompt and acceptance checks, review patches locally, and keep human approval for publishing. No API key is needed for the website's existing build or concept animations; using a hosted coding assistant is a separate account/service choice.
 
+The models in this PC's Ollama already have controlled repository tools through [the local models bridge](./OLLAMA_LOCAL_MODELS_GUIDE.md). It talks only to Ollama on loopback, stages every edit for review, and validates and rebuilds before any edit is kept.
+
 **Official references:** [OpenAI custom instructions](https://learn.chatgpt.com/docs/agent-configuration/agents-md) and [Claude Code project memory](https://code.claude.com/docs/en/memory). Product discovery behavior can change; consult these references if your installed client does not load the entry files. Instruction documents guide behavior; they are not a security sandbox.
 
 ## 2. First-session checklist
@@ -43,6 +45,7 @@ A website chat or API call does not automatically read your local repository. Su
 | Image ingestion | [import-project-images.ps1](../scripts/import-project-images.ps1) | Full source root, never modify originals |
 | Routing, published pages, SEO | [pages.py](../site_app/pages.py), [views.py](../site_app/views.py), [urls.py](../amd_site/urls.py) | Hidden routes and sitemap agree |
 | Export and deployment | [build.py](../build.py), [deploy.yml](../.github/workflows/deploy.yml) | `docs/` is generated; GitHub Pages is static |
+| Local Ollama model access | [ollama_bridge.py](../scripts/ollama_bridge.py), [ollama_bridge.json](../scripts/ollama_bridge.json) | Loopback only; edits are staged, validated and reversible |
 
 Legacy Jekyll folders are not the active Django pipeline. Do not patch them to solve a problem visible in the generated site.
 
@@ -83,6 +86,12 @@ Check only what your change requires, then broader regressions if appropriate:
 - Widths 320, 390, 768, and 1366 have no horizontal overflow; keyboard focus and lightbox controls work.
 - New animation order, pause/resume/replay, manual choice, end state, offscreen/hidden-tab behavior, reduced motion, feature-off, and no-JavaScript fallback work.
 - Review `git diff --check` and the source/generated diff. Do not mistake unrelated pre-existing changes for this task's work.
+- After edits by a local Ollama model or a chat tool, run `.\.venv\Scripts\python.exe scripts\ollama_bridge.py check`. It checks:
+  - JSON and portfolio identity.
+  - Paths and secrets in published files.
+  - CSS that hides content.
+
+  Then it runs `manage.py check` and `build.py`. See [the local models guide](./OLLAMA_LOCAL_MODELS_GUIDE.md).
 
 Use the [training checklist](./AI_AGENT_TRAINING.md) for repeatable exercises. The repository currently has no dedicated automated test suite: browser checks and build output are evidence, not proof of untested behavior. Report exactly what ran and what could not be checked. Never claim deployment without a confirmed requested deployment.
 
@@ -91,6 +100,7 @@ Use the [training checklist](./AI_AGENT_TRAINING.md) for repeatable exercises. T
 - [Website features](./WEBSITE_FEATURES.md): portfolio and animation switches. Hiding a page does not secure public image files.
 - [VR setup](./VR_SETUP_GUIDE.md): external-tour configuration and preparation. The concept illustration is not VR or a real 3D scan.
 - [Ollama chatbot plan](./OLLAMA_CHATBOT_GUIDE.md): separate secured backend/proxy work, not an installed widget. Do not expose the raw local Ollama server or put secrets in frontend files.
+- [Local Ollama models](./OLLAMA_LOCAL_MODELS_GUIDE.md): developer tooling that lets the models on this PC read the repository and stage reviewable edits. It is loopback-only, never commits or publishes, and is not the visitor chatbot.
 - [Search and AI indexing](./SEARCH_AND_AI_INDEXING_GUIDE.md): discoverability setup, not guaranteed ranking or AI citations.
 - [Social media setup](./SOCIAL_MEDIA_SETUP_GUIDE.md): owner-controlled account creation, media consent, and updates. No automated publication is installed.
 

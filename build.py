@@ -7,14 +7,63 @@ static files. Output goes to docs/ for GitHub Pages.
 
 Usage:
     python build.py
+    # If Django is not importable, this script will attempt
+    # to create a virtual environment and install requirements first.
 """
 
 import os
 import sys
 import shutil
+import stat
 import json
 import re
 from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent
+VENV = ROOT / ".venv"
+
+
+def _venv_python():
+    """Return the Python interpreter inside the virtual environment."""
+    if sys.platform == "win32":
+        return str(VENV / "Scripts" / "python.exe")
+    return str(VENV / "bin" / "python")
+
+
+def create_venv():
+    """Create a virtual environment if one doesn't already exist."""
+    if VENV.exists():
+        print("  .venv already exists — skipping creation")
+        return True
+    print("  Creating virtual environment .venv/ ...")
+    return subprocess.check_call(
+        [sys.executable, "-m", "venv", str(VENV)],
+        cwd=ROOT,
+    )
+
+
+def install_requirements():
+    """Install Python packages from requirements.txt using the venv pip."""
+    venv_pip = _venv_python().replace("python", "pip")
+    print("  Installing dependencies from requirements.txt ...")
+    return subprocess.check_call(
+        [venv_pip, "install", "-r", "requirements.txt"],
+        cwd=ROOT,
+    )
+
+
+def check_dependencies():
+    """Create venv and install requirements if Django is not importable."""
+    try:
+        import django  # noqa: F401
+        import markdown  # noqa: F401
+    except ImportError:
+        print("Dependencies not found — setting up virtual environment...")
+        create_venv()
+        install_requirements()
+        print()
+
 
 # ── Set build mode BEFORE importing Django ──────────────────
 os.environ["BUILD_MODE"] = "true"
@@ -32,11 +81,24 @@ DOCS = PROJECT_ROOT / 'docs'
 ROOT_MANIFEST = PROJECT_ROOT / '.generated-pages.json'
 
 
+def _retry_writable(func, path, _exc):
+    """Windows refuses to delete read-only folders; OneDrive marks synced folders read-only and
+    copytree copies that flag into docs/. Clear it and retry, staying best-effort as before."""
+    try:
+        os.chmod(path, os.stat(path).st_mode | stat.S_IWRITE)
+        func(path)
+    except OSError:
+        pass
+
+
 def clean():
     if DOCS.resolve() != PROJECT_ROOT / 'docs':
         raise ValueError('Build output must be the repository docs directory, not a redirected path')
     print("  Cleaning docs/ ...")
-    shutil.rmtree(DOCS, ignore_errors=True)
+    if sys.version_info >= (3, 12):
+        shutil.rmtree(DOCS, onexc=_retry_writable)
+    else:
+        shutil.rmtree(DOCS, onerror=_retry_writable)
     DOCS.mkdir()
 
 

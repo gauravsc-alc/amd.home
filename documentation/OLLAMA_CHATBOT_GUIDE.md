@@ -4,6 +4,8 @@
 
 This document is an implementation plan. The website does **not** yet contain a chatbot widget, an `/api/chat` endpoint, or a public tunnel. Adding configuration alone will not enable a chatbot. Keep the existing image, portfolio, and deployment workflow unchanged while implementing the separate chat service.
 
+To let the local models read this repository and stage reviewable edits, use the developer tooling in [the local models guide](./OLLAMA_LOCAL_MODELS_GUIDE.md). It is loopback-only and provides no visitor chat or gateway.
+
 GitHub Pages serves static files; your local Ollama process and a live backend must run separately. Never configure a public website to call `http://localhost:11434`: localhost would refer to each visitor's computer, not yours.
 
 ## Architecture

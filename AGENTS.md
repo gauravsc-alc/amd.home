@@ -25,3 +25,4 @@
 - Start with focused checks. No dedicated automated test suite is currently present; do not claim a suite passed. Verify the affected behavior in Django and/or generated pages as appropriate.
 - For visual changes check desktop/mobile, keyboard operation, console errors, image decoding, reduced motion, motion disabled, and no JavaScript. For gallery changes check disabled routes and links as well as enabled ones.
 - Run `git diff --check`, review the diff, and report files changed, checks actually run, known limitations, and deployment status. Do not silently fix unrelated issues.
+- After edits by local Ollama models or chat tools, run `.venv\Scripts\python.exe scripts\ollama_bridge.py check`, which validates changed sources and rebuilds. See [the local models guide](documentation/OLLAMA_LOCAL_MODELS_GUIDE.md).

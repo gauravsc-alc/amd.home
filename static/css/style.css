@@ -367,6 +367,28 @@ body[data-animations="true"] .concept-panel.is-building::after { content: ''; po
 body[data-animations="true"] .concept-panel.is-paused .build-layer,
 body[data-animations="true"] .concept-panel.is-paused .blueprint-trace path,
 body[data-animations="true"] .concept-panel.is-paused::after { animation-play-state: paused; }
+
+/* ── Subtle reveal animations ───────────────────────────────── */
+.subtle-reveal__card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--ease), transform var(--ease);
+  will-change: opacity, transform;
+}
+
+body[data-animations="true"] .subtle-reveal__card {
+  animation: revealIn .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms) backwards both;
+}
+
+@keyframes revealIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Staggered delay for grid children */
+.subtle-reveal__grid > *:nth-child(1) { --reveal-delay: 0ms; }
+.subtle-reveal__grid > *:nth-child(2) { --reveal-delay: 100ms; }
+.subtle-reveal__grid > *:nth-child(3) { --reveal-delay: 200ms; }
 @keyframes conceptProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes assembleHome { from { opacity: 0; transform: translateY(var(--build-offset)); } to { opacity: 1; transform: translateY(0); } }
 @keyframes traceHome { from { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; } to { stroke-dasharray: 1; stroke-dashoffset: 0; opacity: 1; } }

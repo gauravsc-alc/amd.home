@@ -61,6 +61,8 @@ amd.home/
 ├── static/css/style.css         ← All styles
 ├── static/js/main.js            ← Project galleries, lightbox, nav
 ├── scripts/import-project-images.ps1 ← Import all project folders (Windows)
+├── scripts/ollama_bridge.py     ← Local Ollama models: file access, staged edits
+├── scripts/ollama_bridge.json   ← Bridge settings (default model, file policy)
 │
 ├── build.py                     ← Generates docs/ from Django
 ├── run_local.py                 ← Starts local dev server
@@ -86,6 +88,7 @@ amd.home/
 - [Website Features and Portfolio Switch](documentation/WEBSITE_FEATURES.md)
 - [360-degree / VR Setup](documentation/VR_SETUP_GUIDE.md)
 - [Local Ollama Chatbot Plan](documentation/OLLAMA_CHATBOT_GUIDE.md)
+- [Local Ollama Models: File Access and Safe Edits](documentation/OLLAMA_LOCAL_MODELS_GUIDE.md)
 
 ---
 

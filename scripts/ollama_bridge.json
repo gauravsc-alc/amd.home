@@ -1,0 +1,23 @@
+{
+  "_comment": "Settings for scripts/ollama_bridge.py. Keys that start with _ are notes and are ignored. Guide: documentation/OLLAMA_LOCAL_MODELS_GUIDE.md",
+  "_ollama_url": "Must stay a loopback address (127.0.0.1, ::1 or localhost). The bridge refuses any other host.",
+  "ollama_url": "http://127.0.0.1:11434",
+  "_default_model": "Used when --model is not given. List the installed models with: .venv\\Scripts\\python.exe scripts\\ollama_bridge.py models",
+  "default_model": "qwen2.5:14b",
+  "_context_tokens": "num_ctx sent with every request (capped at the model's own limit). Larger values need more memory.",
+  "context_tokens": 32768,
+  "max_output_tokens": 8192,
+  "request_timeout_seconds": 900,
+  "max_tool_rounds": 40,
+  "keep_alive": "10m",
+  "_options": "Ollama options for every model, e.g. {\"temperature\": 0.2}. Empty means each model's own defaults.",
+  "options": {},
+  "_model_options": "Per-model overrides, e.g. {\"llama3.2:latest\": {\"temperature\": 0.2}}.",
+  "model_options": {},
+  "_policy": "Glob patterns relative to the repository root. The fixed rules in the script always win: .git, .venv, secrets and .ollama-bridge stay hidden; scripts/, .github/, docs/, AGENTS.md, CLAUDE.md, build.py, manage.py, requirements.txt and generated root pages stay read-only.",
+  "read_deny": ["docs/**", "temp/**", "_data/**", "_includes/**", "_layouts/**", "assets/**"],
+  "write_allow": ["content/**", "templates/**", "static/css/**", "static/js/**", "documentation/**", "README.md"],
+  "write_deny": [],
+  "_validate_commands": "Run in order by apply and check; {python} is the project .venv interpreter. A failure restores the files.",
+  "validate_commands": [["{python}", "manage.py", "check"], ["{python}", "build.py"]]
+}
